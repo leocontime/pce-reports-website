@@ -50,8 +50,43 @@
         .metrics-summary-table td:first-child {
             font-weight: bold;
         }
+
+        /* --- INDEX PAGE LAYOUT START (사용자 요청에 따라 수정) --- */
+        .index-body { max-width: 1200px; margin: auto; padding: 20px; }
+        .index-container {
+            display: flex;
+            gap: 30px; 
+            margin-top: 20px;
+        }
+        .sidebar {
+            flex: 0 0 250px; /* 고정 너비 (왼쪽 리스트) */
+            padding-right: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .sidebar li a {
+            text-decoration: none;
+            color: #34495E;
+        }
+        .sidebar li a:hover {
+            color: #3498DB;
+        }
+        .sidebar li.latest-link a {
+            font-weight: bold;
+            color: #E74C3C !important; 
+        }
+        .main-content {
+            flex: 1; /* 남은 공간 차지 (오른쪽 요약) */
+        }
+        /* --- INDEX PAGE LAYOUT END --- */
     </style>
-        <style>body { max-width: 1200px; }</style>
     </head>
     <body class="index-body">
         <h1 style="margin-bottom: 5px;">📊 PCE 인플레이션 앙상블 예측 보고서 목차</h1>
@@ -62,7 +97,8 @@
                 다음 발행 예정일: 2025년 12월 05일
             </p>
         </div>
-     <div class="index-container">
+     
+        <div class="index-container">
             
             <div class="sidebar">
                 <h2>📅 전체 보고서 리스트</h2>

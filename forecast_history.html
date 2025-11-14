@@ -1,0 +1,168 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>PCE YoY 월별 예측 기록 데이터베이스</title>
+        <style>
+        body { font-family: 'Malgun Gothic', sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
+        h1 { color: #2C3E50; border-bottom: 3px solid #3498DB; padding-bottom: 15px; margin-top: 30px; text-align: center; }
+        .back-link { margin-bottom: 20px; font-size: 1.1em; text-align: right;}
+        .back-link a { color: #E74C3C; text-decoration: none; font-weight: bold; }
+        .back-link a:hover { text-decoration: underline; }
+        .history-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+        .history-table th, .history-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .history-table th { background-color: #f2f2f2; font-size: 14px; }
+        .history-table td:nth-child(4) { color: red; font-weight: bold; } 
+        .history-table td:nth-child(1), .history-table td:nth-child(2) { font-weight: bold; }
+    </style>
+    </head>
+    <body>
+        <div class="back-link">
+            <a href="index.html">🔙 전체 보고서 목록으로 돌아가기</a>
+        </div>
+        <h1>🕒 PCE YoY 월별 예측 기록 데이터베이스</h1>
+        
+
+        <p>이 페이지는 모델이 매월 실시한 36개월 예측 데이터 전체를 누적하여 저장한 기록입니다. (최신 예측 기록이 위에 표시됩니다)</p>
+        
+        <div class='pandas'><table border="1" class="dataframe dataframe history-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Forecast_Month</th>
+      <th>Target_Date</th>
+      <th>Historical</th>
+      <th>Ensemble</th>
+      <th>AR(1)</th>
+      <th>XGBoost</th>
+      <th>LSTM</th>
+      <th>Generated_Datetime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-11</td>
+      <td>2025-12</td>
+      <td>-</td>
+      <td>2.1642</td>
+      <td>2.0855</td>
+      <td>2.1572</td>
+      <td>2.1892</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-01</td>
+      <td>-</td>
+      <td>2.2108</td>
+      <td>2.0464</td>
+      <td>2.2038</td>
+      <td>2.2538</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-02</td>
+      <td>-</td>
+      <td>2.2570</td>
+      <td>2.0073</td>
+      <td>2.2494</td>
+      <td>2.3184</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-03</td>
+      <td>-</td>
+      <td>2.3021</td>
+      <td>1.9682</td>
+      <td>2.2927</td>
+      <td>2.3831</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-04</td>
+      <td>-</td>
+      <td>2.3456</td>
+      <td>1.9291</td>
+      <td>2.3330</td>
+      <td>2.4477</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-05</td>
+      <td>-</td>
+      <td>2.3871</td>
+      <td>1.8900</td>
+      <td>2.3695</td>
+      <td>2.5123</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-06</td>
+      <td>-</td>
+      <td>2.4267</td>
+      <td>1.8508</td>
+      <td>2.4021</td>
+      <td>2.5769</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-07</td>
+      <td>-</td>
+      <td>2.4642</td>
+      <td>1.8117</td>
+      <td>2.4307</td>
+      <td>2.6415</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-08</td>
+      <td>-</td>
+      <td>2.4998</td>
+      <td>1.7726</td>
+      <td>2.4556</td>
+      <td>2.7062</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-09</td>
+      <td>-</td>
+      <td>2.5339</td>
+      <td>1.7335</td>
+      <td>2.4774</td>
+      <td>2.7708</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-10</td>
+      <td>-</td>
+      <td>2.5668</td>
+      <td>1.6944</td>
+      <td>2.4970</td>
+      <td>2.8354</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2026-11</td>
+      <td>-</td>
+      <td>2.5991</td>
+      <td>1.6553</td>
+      <td>2.5155</td>
+      <td>2.9000</td>
+      <td>2025-11-14 10:35:26 PST</td>
+    </tr>
+  </tbody>
+</table></div>
+
+    </body>
+    </html>
+    

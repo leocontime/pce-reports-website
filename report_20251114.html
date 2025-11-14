@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCE 예측 보고서 (2025-11-14 10:28:52 PST)</title>
+    <title>PCE 예측 보고서 (2025-11-14 10:35:26 PST)</title>
     <style>
         body { font-family: 'Malgun Gothic', sans-serif; max-width: 1000px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
         h1 { color: #2C3E50; border-bottom: 3px solid #3498DB; padding-bottom: 15px; margin-top: 30px; }
@@ -51,6 +51,42 @@
         .metrics-summary-table td:first-child {
             font-weight: bold;
         }
+
+        /* --- INDEX PAGE LAYOUT START (사용자 요청에 따라 수정) --- */
+        .index-body { max-width: 1200px; margin: auto; padding: 20px; }
+        .index-container {
+            display: flex;
+            gap: 30px; 
+            margin-top: 20px;
+        }
+        .sidebar {
+            flex: 0 0 250px; /* 고정 너비 (왼쪽 리스트) */
+            padding-right: 20px;
+            border-right: 1px solid #ddd;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            padding: 5px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .sidebar li a {
+            text-decoration: none;
+            color: #34495E;
+        }
+        .sidebar li a:hover {
+            color: #3498DB;
+        }
+        .sidebar li.latest-link a {
+            font-weight: bold;
+            color: #E74C3C !important; 
+        }
+        .main-content {
+            flex: 1; /* 남은 공간 차지 (오른쪽 요약) */
+        }
+        /* --- INDEX PAGE LAYOUT END --- */
     </style>
 </head>
 <body>
@@ -58,7 +94,7 @@
     <div class="report-header">
         <h1>📊 PCE 인플레이션 앙상블 예측 보고서</h1>
         <div class="report-header-nav">
-            <strong style="font-size: 0.95em;">보고서 생성 일시: 2025-11-14 10:28:52 PST</strong>
+            <strong style="font-size: 0.95em;">보고서 생성 일시: 2025-11-14 10:35:26 PST</strong>
             <a href="index.html" style="text-decoration: none; color: #E74C3C; font-weight: bold; font-size: 0.95em;">🔙 전체 보고서 리스트</a>
         </div>
     </div>
@@ -85,7 +121,7 @@
     <h2>2. PCE YoY 예측 결과 비교 (과거 및 미래)</h2>
     <div class="chart-section">
         <img src="ensemble_comparison_chart_20251114.png" alt="PCE YoY Forecast Comparison Chart">
-        <p>연준 목표치(2.0%) 대비 3개 모델과 앙상블 모델의 12개월 예측 경로 비교. 파란색 선은 실제 역사적 PCE YoY입니다.</p>
+        <p>연준 목표치(2.0%) 대비 3개 모델과 앙상블 모델의 12개월 예측 경로 비교. 파란색 선은 실제 역사적 PCE YoY입니다. **(최고점/최저점 수치 표시 개선 완료)**</p>
     </div>
     
     <h2>
@@ -170,7 +206,7 @@
       <td>0.9976</td>
       <td>1.95</td>
       <td>2.5155</td>
-      <td>2025-11-14 10:28:52 PST</td>
+      <td>2025-11-14 10:35:26 PST</td>
     </tr>
     <tr>
       <td>LSTM_Level_3</td>
@@ -178,7 +214,7 @@
       <td>0.985</td>
       <td>2.05</td>
       <td>2.9000</td>
-      <td>2025-11-14 10:28:52 PST</td>
+      <td>2025-11-14 10:35:26 PST</td>
     </tr>
     <tr>
       <td>AR_1</td>
@@ -186,7 +222,7 @@
       <td>0.9749</td>
       <td>1.5372</td>
       <td>1.6553</td>
-      <td>2025-11-14 10:28:52 PST</td>
+      <td>2025-11-14 10:35:26 PST</td>
     </tr>
     <tr>
       <td>앙상블 (Stacking)</td>
@@ -194,7 +230,7 @@
       <td>N/A</td>
       <td>---</td>
       <td>2.5991</td>
-      <td>2025-11-14 10:28:52 PST</td>
+      <td>2025-11-14 10:35:26 PST</td>
     </tr>
   </tbody>
 </table></div>
