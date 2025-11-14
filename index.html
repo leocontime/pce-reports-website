@@ -37,7 +37,7 @@
         .report-header-nav { 
             display: flex; 
             justify-content: space-between; 
-            align-items: center; 
+            align-items: flex-end; 
             max-width: 90%; 
             margin: 0 auto 10px auto; 
             padding: 0 10px;
@@ -51,7 +51,7 @@
             font-weight: bold;
         }
 
-        /* --- INDEX PAGE LAYOUT START (사용자 요청에 따라 수정) --- */
+        /* --- INDEX PAGE LAYOUT START --- */
         .index-body { max-width: 1200px; margin: auto; padding: 20px; }
         .index-container {
             display: flex;
@@ -63,6 +63,16 @@
             padding-right: 20px;
             border-right: 1px solid #ddd;
         }
+        /* [**요청 1 반영**] '전체 보고서 리스트' 글자 크기 조정 */
+        .sidebar h2 {
+            font-size: 1.2em; /* 폰트 크기 축소 */
+            white-space: nowrap; /* 줄바꿈 방지 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-bottom: 5px;
+            color: #34495E;
+            border-left: none;
+        }
         .sidebar ul {
             list-style: none;
             padding: 0;
@@ -70,7 +80,6 @@
         .sidebar li {
             padding: 5px 0;
             border-bottom: 1px dashed #eee;
-            /* Fix 1: 글자 줄바꿈 방지 */
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
@@ -105,8 +114,7 @@
         <div class="index-container">
             
             <div class="sidebar">
-                <h2>📅 전체 보고서 리스트</h2>
-                <ul>
+                <h2>📅 전체 보고서 리스트</h2> <ul>
                     <li class="latest-link"><a href="report_20251114.html">2025.11.14</a></li>
 
                 </ul>
