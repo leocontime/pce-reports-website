@@ -1,80 +1,75 @@
 
     <!DOCTYPE html>
-    <html lang="ko">
+    <html>
     <head>
-        <meta charset="UTF-8">
-        <title>PCE 모델 성능 요약 기록 데이터베이스</title>
+        <title>PCE Metrics History Database</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
         <style>
-        body { font-family: 'Malgun Gothic', sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
-        h1 { color: #2C3E50; border-bottom: 3px solid #3498DB; padding-bottom: 15px; margin-top: 30px; text-align: center; }
-        .back-link { margin-bottom: 20px; font-size: 1.1em; text-align: right;}
-        .back-link a { color: #E74C3C; text-decoration: none; font-weight: bold; }
-        .back-link a:hover { text-decoration: underline; }
-        .history-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
-        .history-table th, .history-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-        .history-table th { background-color: #f2f2f2; font-size: 14px; }
-        .history-table td:nth-child(4) { color: red; font-weight: bold; } 
-        .history-table td:nth-child(1), .history-table td:nth-child(2) { font-weight: bold; }
-    </style>
+            .container { width: 90%; margin: 0 auto; padding-top: 30px; }
+            .dataframe { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+            .dataframe th, .dataframe td { border: 1px solid #e0e0e0; padding: 8px; text-align: center; }
+        </style>
     </head>
     <body>
-        <div class="back-link">
-            <a href="index.html">🔙 전체 보고서 목록으로 돌아가기</a>
-        </div>
-        <h1>🕒 PCE 모델 성능 요약 기록 데이터베이스</h1>
-        
-
-        <p>이 페이지는 각 모델의 RMSE, R-squared 등의 성능 지표를 매월 누적하여 기록한 데이터입니다.</p>
-        
-        <div class='pandas'><table border="1" class="dataframe dataframe history-table">
+        <div class="container">
+            <h1>PCE Metrics History Database</h1>
+            <a href="index.html">⬅️ 인덱스 페이지로 돌아가기</a>
+            
+        <h2>개별 모델 성능 평가 지표 히스토리</h2>
+        <p>모델별 RMSE, R-squared, Durbin-Watson 등의 지표 변화를 추적합니다.</p>
+        <table border="1" class="dataframe dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Forecast_Month</th>
-      <th>Model_Type</th>
+      <th>모델 유형</th>
       <th>RMSE</th>
-      <th>R_squared</th>
-      <th>Durbin_Watson</th>
+      <th>R-squared</th>
+      <th>Durbin-Watson</th>
       <th>Final_Forecast</th>
+      <th>생성_일시</th>
+      <th>Generated_Date</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>2025-11</td>
+      <td>AR(1)</td>
+      <td>0.8240</td>
+      <td>0.7100</td>
+      <td>1.8400</td>
+      <td>-1.2000</td>
+      <td>2025-11-14 14:20:05 PST</td>
+      <td>2025-11-14 14:20</td>
+    </tr>
+    <tr>
       <td>XGBoost</td>
-      <td>0.1846</td>
-      <td>0.9976</td>
-      <td>1.95</td>
-      <td>2.5155</td>
+      <td>0.4120</td>
+      <td>0.8800</td>
+      <td>2.0200</td>
+      <td>0.0000</td>
+      <td>2025-11-14 14:20:05 PST</td>
+      <td>2025-11-14 14:20</td>
     </tr>
     <tr>
-      <td>2025-11</td>
-      <td>LSTM_Level_3</td>
-      <td>0.2326</td>
-      <td>0.985</td>
-      <td>2.05</td>
-      <td>2.9000</td>
+      <td>LSTM</td>
+      <td>0.5510</td>
+      <td>0.8100</td>
+      <td>1.9500</td>
+      <td>0.0000</td>
+      <td>2025-11-14 14:20:05 PST</td>
+      <td>2025-11-14 14:20</td>
     </tr>
     <tr>
-      <td>2025-11</td>
-      <td>AR_1</td>
-      <td>0.25</td>
-      <td>0.9749</td>
-      <td>1.5372</td>
-      <td>1.6553</td>
-    </tr>
-    <tr>
-      <td>2025-11</td>
-      <td>앙상블 (Stacking)</td>
-      <td>-</td>
-      <td>-</td>
-      <td>---</td>
-      <td>2.5991</td>
+      <td>앙상블</td>
+      <td>0.5957</td>
+      <td>0.8000</td>
+      <td>1.9367</td>
+      <td>-0.1009</td>
+      <td>2025-11-14 14:20:05 PST</td>
+      <td>2025-11-14 14:20</td>
     </tr>
   </tbody>
-</table></div>
+</table>
         
-        
-
+        </div>
     </body>
     </html>
     
