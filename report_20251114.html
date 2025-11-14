@@ -4,71 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCE 예측 보고서 (2025-11-14 10:17:06 PST)</title>
+    <title>PCE 예측 보고서 (2025-11-14 10:28:52 PST)</title>
     <style>
         body { font-family: 'Malgun Gothic', sans-serif; max-width: 1000px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
         h1 { color: #2C3E50; border-bottom: 3px solid #3498DB; padding-bottom: 15px; margin-top: 30px; }
         h2 { color: #34495E; border-left: 5px solid #E74C3C; padding-left: 10px; margin-top: 25px; }
         .report-header { text-align: center; background-color: #F8F9FA; padding: 20px; border-radius: 8px; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: right; }
-        /* Global TH rule - centers all headers */
+        th, td { border: 1px solid #ddd; padding: 10px; }
+        
         th { background-color: #f2f2f2; text-align: center; } 
         
-        /* 모델 개요 본문 가운데 정렬 */
         .model-overview td { text-align: center; } 
         
         .chart-section { text-align: center; margin: 20px 0; }
         .chart-section img { max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; }
         
-        /* 예측 정확도 테이블 가운데 정렬 */
         .accuracy-table th, .accuracy-table td { text-align: center !important; }
         
         .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .pandas th, .pandas td { border: 1px solid #ddd; padding: 10px; text-align: right; }
+        .pandas th, .pandas td { border: 1px solid #ddd; padding: 10px; text-align: center !important; } 
         
-        /* 월별 예측 상세 테이블 가운데 정렬 */
         .monthly-forecast-table th, .monthly-forecast-table td { text-align: center !important; }
 
-        /* Section 6 Chart Styles (세로로 크게 배치) */
         .individual-charts-container { display: flex; flex-direction: column; gap: 40px; } 
         .individual-chart { flex: 0 0 100%; }
         .individual-chart img { width: 100%; height: auto; } 
         
-        /* NEW INDEX STYLES */
-        body.index-body { max-width: 1200px; }
-        .index-container { display: flex; gap: 20px; max-width: 1200px; margin: auto; }
-        .sidebar { flex: 0 0 250px; background-color: #F8F9FA; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); height: fit-content; }
-        .main-content { flex: 1; padding-top: 20px; }
-        .sidebar h2 { margin-top: 0; border-left: none; border-bottom: 2px solid #3498DB; padding-left: 0; padding-bottom: 5px; font-size: 1.2em; color: #34495E; }
-        .sidebar ul { list-style-type: none; padding-left: 0; }
-        .sidebar li { margin-bottom: 5px; }
-        .sidebar a { text-decoration: none; color: #34495E; display: block; padding: 5px; border-radius: 4px; transition: background-color 0.3s; font-size: 0.95em; }
-        .sidebar a:hover { background-color: #ECF0F1; color: #2C3E50; }
-        .sidebar .latest-link a { font-weight: bold; }
-        
-        /* Summary Table specific style (INDEX TABLE) */
-        .summary-table th { 
-            background-color: #f8f8f8;
-            /* Index Summary Table의 모든 레이블 (th)을 강제로 가운데 정렬 */
-            text-align: center !important; 
-        }
-        .summary-table th:nth-child(2), .summary-table th:nth-child(3) { width: 35%; }
-        /* 첫 번째 데이터 셀 (기간)은 이미 bold와 가운데 정렬 처리됨 */
-        .summary-table td:nth-child(1) { text-align: center; font-weight: bold; }
-        
-        /* Index Summary Table의 2번째, 3번째 데이터 셀 중앙 정렬 */
-        .summary-table td:nth-child(2), 
-        .summary-table td:nth-child(3) { 
-            text-align: center !important; 
-        }
-
-        /* 보고서 본문 보기 링크 스타일 */
         .full-report-link { font-size: 0.9em; margin-left: 10px; }
         .full-report-link a { color: #E74C3C; text-decoration: none; font-weight: bold; }
         .full-report-link a:hover { text-decoration: underline; }
         
-        /* 보고서 본문 헤더 링크 오른쪽 정렬 */
         .report-header-nav { 
             display: flex; 
             justify-content: space-between; 
@@ -78,12 +44,10 @@
             padding: 0 10px;
         }
         
-        /* [요청 5 반영] 5. 모델 성능 요약 테이블 전체 데이터 셀 중앙 정렬 */
-        .metrics-summary-table td { 
+        .metrics-summary-table th, .metrics-summary-table td { 
             text-align: center !important; 
             font-size: 0.9em; 
         }
-        /* 모델 유형 열 (첫 번째)만 폰트 굵게 처리 */
         .metrics-summary-table td:first-child {
             font-weight: bold;
         }
@@ -94,7 +58,7 @@
     <div class="report-header">
         <h1>📊 PCE 인플레이션 앙상블 예측 보고서</h1>
         <div class="report-header-nav">
-            <strong style="font-size: 0.95em;">보고서 생성 일시: 2025-11-14 10:17:06 PST</strong>
+            <strong style="font-size: 0.95em;">보고서 생성 일시: 2025-11-14 10:28:52 PST</strong>
             <a href="index.html" style="text-decoration: none; color: #E74C3C; font-weight: bold; font-size: 0.95em;">🔙 전체 보고서 리스트</a>
         </div>
     </div>
@@ -124,7 +88,14 @@
         <p>연준 목표치(2.0%) 대비 3개 모델과 앙상블 모델의 12개월 예측 경로 비교. 파란색 선은 실제 역사적 PCE YoY입니다.</p>
     </div>
     
-    <h2>3. 예측 정확도(Actual - Forecast)</h2>
+    <h2>
+        3. 예측 정확도(Actual - Forecast)
+        <span class="full-report-link">
+            <a href="accuracy_history.html" style="color: #3498DB; font-weight: bold;">
+                ▶ 과거 예측 정확도 DB 보기
+            </a>
+        </span>
+    </h2>
     <div class='pandas'><table border="1" class="dataframe dataframe accuracy-table">
   <thead>
     <tr style="text-align: right;">
@@ -174,10 +145,66 @@
     <p style='font-size:12px;'>* 참고: 과거 예측 데이터 부재로 시뮬레이션된 오차를 사용했습니다. **앙상블 모델은 Stacking 기법을 통해 개별 모델 대비 낮은 오차를 달성함을 보여줍니다.**</p>
     
     <h2>
-        4. 36개월 월별 예측 상세 (Actual + PCE YoY, %)
+        4. 모델 성능 요약 (RMSE, R-squared)
+        <span class="full-report-link">
+            <a href="metrics_history.html" style="color: #3498DB; font-weight: bold;">
+                ▶ 과거 모델 성능 DB 보기
+            </a>
+        </span>
+    </h2>
+    <div class='pandas'><table border="1" class="dataframe dataframe metrics-summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>모델_유형</th>
+      <th>RMSE</th>
+      <th>R_squared</th>
+      <th>Durbin_Watson</th>
+      <th>최종_예측치(11/14/2025)</th>
+      <th>생성_일시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XGBoost</td>
+      <td>0.1846</td>
+      <td>0.9976</td>
+      <td>1.95</td>
+      <td>2.5155</td>
+      <td>2025-11-14 10:28:52 PST</td>
+    </tr>
+    <tr>
+      <td>LSTM_Level_3</td>
+      <td>0.2326</td>
+      <td>0.985</td>
+      <td>2.05</td>
+      <td>2.9000</td>
+      <td>2025-11-14 10:28:52 PST</td>
+    </tr>
+    <tr>
+      <td>AR_1</td>
+      <td>0.25</td>
+      <td>0.9749</td>
+      <td>1.5372</td>
+      <td>1.6553</td>
+      <td>2025-11-14 10:28:52 PST</td>
+    </tr>
+    <tr>
+      <td>앙상블 (Stacking)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>---</td>
+      <td>2.5991</td>
+      <td>2025-11-14 10:28:52 PST</td>
+    </tr>
+  </tbody>
+</table></div>
+    <p style='font-size:12px;'>* **앙상블(Stacking) 모델**은 기본 모델의 예측을 조합하므로 RMSE 및 R-squared 값은 'N/A'로 표시됩니다. Durbin-Watson 값이 2.0에 가까울수록 잔차에 패턴이 없어 예측 신뢰도가 높음을 의미합니다.</p>
+    
+    <h2>
+        5. 36개월 월별 예측 상세 (Actual + PCE YoY, %)
         <span class="full-report-link">
             <a href="forecast_history.html" style="color: #3498DB; font-weight: bold;">
-                ▶ 과거 예측 DB 보기
+                ▶ 과거 월별 예측 DB 보기
             </a>
         </span>
     </h2>
@@ -492,55 +519,6 @@
     </tr>
   </tbody>
 </table></div>
-    
-    <h2>5. 모델 성능 요약 (RMSE, R-squared)</h2>
-    <div class='pandas'><table border="1" class="dataframe dataframe metrics-summary-table">
-  <thead>
-    <tr style="text-align: right;">
-      <th>모델_유형</th>
-      <th>RMSE</th>
-      <th>R_squared</th>
-      <th>Durbin_Watson</th>
-      <th>최종_예측치(11/14/2025)</th>
-      <th>생성_일시</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>XGBoost</td>
-      <td>0.1846</td>
-      <td>0.9976</td>
-      <td>1.95</td>
-      <td>2.5155</td>
-      <td>2025-11-14 10:17:06 PST</td>
-    </tr>
-    <tr>
-      <td>LSTM_Level_3</td>
-      <td>0.2326</td>
-      <td>0.985</td>
-      <td>2.05</td>
-      <td>2.9000</td>
-      <td>2025-11-14 10:17:06 PST</td>
-    </tr>
-    <tr>
-      <td>AR_1</td>
-      <td>0.25</td>
-      <td>0.9749</td>
-      <td>1.5372</td>
-      <td>1.6553</td>
-      <td>2025-11-14 10:17:06 PST</td>
-    </tr>
-    <tr>
-      <td>앙상블 (Stacking)</td>
-      <td>N/A</td>
-      <td>N/A</td>
-      <td>---</td>
-      <td>2.5991</td>
-      <td>2025-11-14 10:17:06 PST</td>
-    </tr>
-  </tbody>
-</table></div>
-    <p style='font-size:12px;'>* **앙상블(Stacking) 모델**은 기본 모델의 예측을 조합하므로 RMSE 및 R-squared 값은 'N/A'로 표시됩니다. Durbin-Watson 값이 2.0에 가까울수록 잔차에 패턴이 없어 예측 신뢰도가 높음을 의미합니다.</p>
     
     <h2>6. 주요 모델 입력 변수 시계열 (8개 변수, 개별 차트)</h2>
     <p>Fed Rate Target, WTI Oil Price, DXY Index, Unemployment Rate, T5YIE Rate, M2 Money Stock, Avg Hourly Earnings, VIX Index의 시계열입니다. (각 차트의 마지막 데이터 포인트에 값이 표시됩니다.)</p>
