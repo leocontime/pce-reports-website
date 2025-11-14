@@ -97,6 +97,13 @@
         .main-content {
             flex: 1; /* 남은 공간 차지 (오른쪽 요약) */
         }
+        
+        /* [수정 2 반영] 현재 월 행: 굵게 및 밑줄 스타일 */
+        .highlight-month td { 
+            font-weight: bold; 
+            text-decoration: underline; 
+            color: #34495E; 
+        }
         /* --- INDEX PAGE LAYOUT END --- */
     </style>
     </head>
@@ -268,7 +275,7 @@
     </tr>
   </tbody>
 </table></div>
-                <p style='font-size:12px;'>* 이 표는 최근 12개월의 실제 PCE YoY 값과 향후 12개월의 앙상블 예측값을 월별로 보여줍니다.</p>
+                <p style='font-size:12px;'>* 이 표는 최근 12개월의 실제 PCE YoY 값과 향후 12개월의 앙상블 예측값을 월별로 보여줍니다. **현재 월(앙상블 추정치가 존재하는 가장 최근 월)은 굵게/밑줄로 표시됩니다.**</p>
                 
             </div>
             
