@@ -3,52 +3,265 @@
     <html lang="ko">
     <head>
         <meta charset="UTF-8">
-        <title>PCE 인플레이션 예측 보고서 목록</title>
+        <title>PCE Forecast Reports Index</title>
         <style>
-        body { font-family: 'Malgun Gothic', sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
-        h1 { color: #2C3E50; border-bottom: 3px solid #3498DB; padding-bottom: 15px; margin-top: 30px; text-align: center; }
+        body { font-family: 'Malgun Gothic', sans-serif; max-width: 1000px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
+        h1 { color: #2C3E50; border-bottom: 3px solid #3498DB; padding-bottom: 15px; margin-top: 30px; }
         h2 { color: #34495E; border-left: 5px solid #E74C3C; padding-left: 10px; margin-top: 25px; }
-        .report-summary { background-color: #F8F9FA; padding: 20px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
-        .report-summary p { font-size: 1.1em; }
-        .release-date { font-weight: bold; color: #E74C3C; font-size: 1.3em; display: block; margin: 10px 0; }
-        .report-list-section { margin-top: 30px; }
-        .report-list-section ul { list-style-type: disc; padding-left: 20px; }
-        .report-list-section li { margin-bottom: 8px; font-size: 1.05em; }
-        .report-list-section a { text-decoration: none; color: #34495E; font-weight: bold; }
-        .report-list-section a:hover { text-decoration: underline; color: #2C3E50; }
+        .report-header { text-align: center; background-color: #F8F9FA; padding: 20px; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: right; }
+        /* Global TH rule - centers all headers */
+        th { background-color: #f2f2f2; text-align: center; } 
+        
+        /* 모델 개요 본문 가운데 정렬 */
+        .model-overview td { text-align: center; } 
+        
         .chart-section { text-align: center; margin: 20px 0; }
         .chart-section img { max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px; }
-        .history-link a { color: #3498DB; text-decoration: none; font-weight: bold; }
+        
+        /* 예측 정확도 테이블 가운데 정렬 */
+        .accuracy-table th, .accuracy-table td { text-align: center !important; }
+        
+        .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pandas th, .pandas td { border: 1px solid #ddd; padding: 10px; text-align: right; }
+        
+        /* 월별 예측 상세 테이블 가운데 정렬 */
+        .monthly-forecast-table th, .monthly-forecast-table td { text-align: center !important; }
+
+        /* Section 6 Chart Styles (세로로 크게 배치) */
+        .individual-charts-container { display: flex; flex-direction: column; gap: 40px; } 
+        .individual-chart { flex: 0 0 100%; }
+        .individual-chart img { width: 100%; height: auto; } 
+        
+        /* NEW INDEX STYLES */
+        body.index-body { max-width: 1200px; }
+        .index-container { display: flex; gap: 20px; max-width: 1200px; margin: auto; }
+        .sidebar { flex: 0 0 250px; background-color: #F8F9FA; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); height: fit-content; }
+        .main-content { flex: 1; padding-top: 20px; }
+        .sidebar h2 { margin-top: 0; border-left: none; border-bottom: 2px solid #3498DB; padding-left: 0; padding-bottom: 5px; font-size: 1.2em; color: #34495E; }
+        .sidebar ul { list-style-type: none; padding-left: 0; }
+        .sidebar li { margin-bottom: 5px; }
+        .sidebar a { text-decoration: none; color: #34495E; display: block; padding: 5px; border-radius: 4px; transition: background-color 0.3s; font-size: 0.95em; }
+        .sidebar a:hover { background-color: #ECF0F1; color: #2C3E50; }
+        .sidebar .latest-link a { font-weight: bold; }
+        
+        /* Summary Table specific style (INDEX TABLE) */
+        .summary-table th { 
+            background-color: #f8f8f8;
+            /* Index Summary Table의 모든 레이블 (th)을 강제로 가운데 정렬 */
+            text-align: center !important; 
+        }
+        .summary-table th:nth-child(2), .summary-table th:nth-child(3) { width: 35%; }
+        /* 첫 번째 데이터 셀 (기간)은 이미 bold와 가운데 정렬 처리됨 */
+        .summary-table td:nth-child(1) { text-align: center; font-weight: bold; }
+        
+        /* Index Summary Table의 2번째, 3번째 데이터 셀 중앙 정렬 */
+        .summary-table td:nth-child(2), 
+        .summary-table td:nth-child(3) { 
+            text-align: center !important; 
+        }
+
+        /* 보고서 본문 보기 링크 스타일 */
+        .full-report-link { font-size: 0.9em; margin-left: 10px; }
+        .full-report-link a { color: #E74C3C; text-decoration: none; font-weight: bold; }
+        .full-report-link a:hover { text-decoration: underline; }
+        
+        /* 보고서 본문 헤더 링크 오른쪽 정렬 */
+        .report-header-nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            max-width: 90%; 
+            margin: 0 auto 10px auto; 
+            padding: 0 10px;
+        }
+        
+        /* 5. 모델 성능 요약 테이블 전체 데이터 셀 중앙 정렬 */
+        .metrics-summary-table td { 
+            text-align: center !important; 
+            font-size: 0.9em; 
+        }
+        /* 모델 유형 열 (첫 번째)만 폰트 굵게 처리 */
+        .metrics-summary-table td:first-child {
+            font-weight: bold;
+        }
     </style>
+        <style>body { max-width: 1200px; }</style>
     </head>
-    <body>
-        <h1>📈 PCE 인플레이션 앙상블 예측 보고서 목록</h1>
-        <div class="report-summary">
-            <h2>보고서 개요 및 다음 발행 예정일</h2>
-            <p>
-                이 보고서는 PCE YoY(전년 대비 개인소비지출 물가지수)에 대한 앙상블 예측 모델의 결과를 담고 있습니다.
-                <br>
-                <strong>다음 보고서 발행 예정일:</strong> 
-                <span class="release-date">2025년 12월 5일</span>
-                (매월 5일 발행)
+    <body class="index-body">
+        <h1 style="margin-bottom: 5px;">📊 PCE 인플레이션 앙상블 예측 보고서 목차</h1>
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 10px;">
+            <h3 style="color: #34495E; margin: 0; border-left: none; padding-left: 0;">PCE Inflation Ensemble Forecast Report Index</h3> 
+            <p style="font-size: 1.1em; font-weight: bold; color: #34495E; margin: 0;">
+                다음 발행 예정일: 2025/12/30
             </p>
-            <p class="history-link">
-                <a href="forecast_history.html">▶ PCE YoY 과거 예측 기록 데이터베이스 보기</a>
-            </p>
-            <p style="font-size: 0.85em; color: #666;">페이지 업데이트 일시 (PST 기준): 2025-11-14 09:23:58 PST</p>
+        </div>
+     <div class="index-container">
+            
+            <div class="sidebar">
+                <h2>📅 전체 보고서 리스트</h2>
+                <ul>
+                    <li class="latest-link"><a href="report_20251114.html">11/14/2025 Report</a></li>
+
+                </ul>
+                <p style="font-size:12px; margin-top:20px; color:#777;">* 이 목록은 GitHub Actions에 의해 자동으로 업데이트됩니다. 최신 보고서가 목록의 가장 위에 위치합니다.</p>
+            </div>
+            
+            <div class="main-content">
+                
+                
+        <h2>
+            📈 최신 보고서 요약 (2025-11-14)
+            <span class="full-report-link">
+                <a href="report_20251114.html">[보고서 본문 보기]</a>
+            </span>
+        </h2>
+     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px;">PCE Historical 및 앙상블 예측 경로 (2020.01~)</h3>
+                <div class="chart-section">
+                    <img src="index_ensemble_comparison_chart_20251114.png" alt="PCE YoY Historical & Ensemble Forecast Chart">
+                    <p style='font-size:12px;'>* 전체 보고서에는 개별 모델(AR(1), XGBoost, LSTM) 경로가 모두 포함되어 있습니다.</p>
+                </div>
+                
+                <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top:30px;">월별 PCE YoY (실제 및 앙상블 추정치) 비교</h3>
+                <div class='pandas'><table border="1" class="dataframe dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>기간</th>
+      <th>PCE YoY (실제)</th>
+      <th>PCE YoY (앙상블 추정치)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-12</td>
+      <td>2.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-01</td>
+      <td>2.61</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-02</td>
+      <td>2.71</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-03</td>
+      <td>2.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-04</td>
+      <td>2.28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-05</td>
+      <td>2.46</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-06</td>
+      <td>2.59</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-07</td>
+      <td>2.6</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-08</td>
+      <td>2.74</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-09</td>
+      <td>2.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-10</td>
+      <td>2.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>2.12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2025-12</td>
+      <td></td>
+      <td>2.16</td>
+    </tr>
+    <tr>
+      <td>2026-01</td>
+      <td></td>
+      <td>2.21</td>
+    </tr>
+    <tr>
+      <td>2026-02</td>
+      <td></td>
+      <td>2.26</td>
+    </tr>
+    <tr>
+      <td>2026-03</td>
+      <td></td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <td>2026-04</td>
+      <td></td>
+      <td>2.35</td>
+    </tr>
+    <tr>
+      <td>2026-05</td>
+      <td></td>
+      <td>2.39</td>
+    </tr>
+    <tr>
+      <td>2026-06</td>
+      <td></td>
+      <td>2.43</td>
+    </tr>
+    <tr>
+      <td>2026-07</td>
+      <td></td>
+      <td>2.46</td>
+    </tr>
+    <tr>
+      <td>2026-08</td>
+      <td></td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <td>2026-09</td>
+      <td></td>
+      <td>2.53</td>
+    </tr>
+    <tr>
+      <td>2026-10</td>
+      <td></td>
+      <td>2.57</td>
+    </tr>
+    <tr>
+      <td>2026-11</td>
+      <td></td>
+      <td>2.6</td>
+    </tr>
+  </tbody>
+</table></div>
+                <p style='font-size:12px;'>* 이 표는 최근 12개월의 실제 PCE YoY 값과 향후 12개월의 앙상블 예측값을 월별로 보여줍니다.</p>
+                
+            </div>
+            
         </div>
         
-        <h2>주요 예측 경로 (앙상블 모델)</h2>
-        <div class="chart-section">
-            <img src="index_ensemble_comparison_chart_20251114.png" alt="PCE Historical & Ensemble Forecast Chart">
-            <p>가장 최근 보고서에 사용된 PCE YoY 역사적 데이터 및 앙상블 예측 경로입니다. (**매년 1월 데이터 및 최고/최저점이 표시됩니다**)</p>
-        </div>
-
-        <h2 class="report-list-section">전체 보고서 목록</h2>
-        <div class="report-list-section">
-            <p style='font-size: 0.9em; color: #666;'>(*최신 보고서가 상단에 표시됩니다)</p>
-            <ul><li><a href='report_20251114.html'>2025년 11월 14일 보고서</a></li></ul>
-        </div>
     </body>
     </html>
     
