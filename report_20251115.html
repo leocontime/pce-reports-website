@@ -13,12 +13,17 @@
             .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
             .section h3 { margin-top: 0; }
             
-            /* Table styles */
+            /* Table styles (Full width, dark header) */
+            .summary-table, .pandas { width: 100%; } /* Ensure container is full width */
             .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
             .summary-table th, .summary-table td, .pandas th, .pandas td { 
-                border: 1px solid #ddd; padding: 8px; text-align: center; 
+                border: 1px solid #ddd; padding: 10px; text-align: center; 
             }
-            .summary-table th { background-color: #f2f2f2; }
+            .summary-table th { 
+                background-color: #34495E; /* Dark Blue/Grey for header (User Request) */
+                color: white; 
+            }
+            .summary-table tr:nth-child(even) { background-color: #f9f9f9; } /* Alternating row color */
             
             img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         </style>
@@ -27,7 +32,7 @@
     <body>
         
     <h2>PCE 앙상블 예측 보고서 (2025년 11월 15일)</h2>
-    <p>✅ **생성 시점:** 2025-11-15 02:59:00 PST</p>
+    <p>✅ **생성 시점:** 2025-11-15 03:17:36 PST</p>
     
     <div class="section">
     <h2>1. 앙상블 예측 요약</h2> 
