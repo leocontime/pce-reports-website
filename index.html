@@ -1,41 +1,44 @@
 
-        <!DOCTYPE html>
-        <html lang="ko">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>PCE Ensemble Forecast Dashboard</title>
-            
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PCE Ensemble Forecast Dashboard</title>
+        
     <style>
         body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
         h1, h2, h3 { color: #2C3E50; }
         h1 { border-bottom: 2px solid #3498DB; padding-bottom: 10px; margin-top: 0; }
         .nav-links a { margin-right: 15px; text-decoration: none; color: #3498DB; font-weight: bold; }
         .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
+        
+        /* Request 4: Full width tables in report/data pages */
+        .summary-table, .pandas { width: 100%; }
+        .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
         .summary-table th, .summary-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
         .summary-table th { background-color: #f2f2f2; }
+        
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
-        /* 인덱스 페이지 레이아웃 (좌/우 분할) */
+        /* Request 2: 페이지 레이아웃 (좌/우 분할) */
         @media (min-width: 800px) {
             .content-wrapper { display: flex; gap: 20px; }
             .left-menu { flex: 0 0 250px; padding-right: 20px; border-right: 1px solid #eee; }
             .main-content { flex-grow: 1; }
         }
         
-        /* 인덱스 페이지 전용 스타일 */
+        /* Request 2: 인덱스 페이지 전용 스타일 */
         .report-list-item { margin-bottom: 8px; font-size: 0.95em; list-style-type: none; }
         .report-list-item a { text-decoration: none; color: #555; }
         .report-list-item a:hover { color: #E74C3C; text-decoration: underline; }
         .left-menu ul { padding-left: 0; }
     </style>
     
-        </head>
-        <body>
-            
-    <h1>📊 PCE 앙상블 예측 대시보드</h1>
-    <p>이 페이지는 정기적으로 생성된 PCE 물가 앙상블 예측 보고서와 누적 데이터베이스에 접근할 수 있는 포털입니다.</p>
-    
+    </head>
+    <body>
+        
+    <h1>PCE Ensemble Forecast Dashboard</h1>
     <div class="content-wrapper">
         
     <div class="left-menu">
@@ -49,7 +52,27 @@
         </ul>
         
         <h3>전체 보고서 기록 (최신순)</h3>
-        <ul><li class="report-list-item"><a href="report_20251114.html">📈 2025년 11월 14일 보고서</a></li></ul>
+        <ul><li>아직 생성된 보고서가 없습니다.</li></ul>
+    </div>
+    
+        <div class="main-content">
+            
+    <h1>📊 PCE 앙상블 예측 대시보드</h1>
+    <p>이 페이지는 정기적으로 생성된 PCE 물가 앙상블 예측 보고서와 누적 데이터베이스에 접근할 수 있는 포털입니다.</p>
+    <div class="content-wrapper">
+        
+    <div class="left-menu">
+        <h2 style="margin-top: 0;">📚 보고서 아카이브</h2>
+        
+        <h3>누적 데이터베이스</h3>
+        <ul>
+            <li class="report-list-item"><a href="forecast_history.html">🗓️ PCE 예측 히스토리</a></li>
+            <li class="report-list-item"><a href="accuracy_history.html">🎯 예측 정확도 히스토리</a></li>
+            <li class="report-list-item"><a href="metrics_history.html">📈 모델 성능 지표</a></li>
+        </ul>
+        
+        <h3>전체 보고서 기록 (최신순)</h3>
+        <ul><li>아직 생성된 보고서가 없습니다.</li></ul>
     </div>
     
         
@@ -68,11 +91,14 @@
             <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
         </div>
         
-        <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 16:42:42 PST</p>
+        <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 16:51:29 PST</p>
     </div>
     
     </div>
     
-        </body>
-        </html>
-        
+        </div>
+    </div>
+    
+    </body>
+    </html>
+    
