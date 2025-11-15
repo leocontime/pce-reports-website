@@ -1,1 +1,264 @@
-<html>... Full Report Content ...</html>
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PCE 앙상블 예측 보고서 (2025년 11월 14일)</title>
+        
+    <style>
+        body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
+        h1, h2, h3 { color: #2C3E50; }
+        h1 { border-bottom: 2px solid #3498DB; padding-bottom: 10px; }
+        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498DB; font-weight: bold; }
+        .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
+        .summary-table th, .summary-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .summary-table th { background-color: #f2f2f2; }
+        img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+    
+    </head>
+    <body>
+        
+    <div class="nav-links" style="margin-bottom: 25px;">
+        <a href="index.html">🏠 메인</a>
+        <a href="forecast_history.html">🗓️ 예측 히스토리</a>
+        <a href="accuracy_history.html">🎯 정확도 히스토리</a>
+        <a href="metrics_history.html">📈 모델 성능</a>
+    </div>
+    
+        
+    <h1>PCE 앙상블 예측 보고서 (2025년 11월 14일)</h1>
+    <p>✅ **생성 시점:** 2025-11-14 16:24:35 PST</p>
+    
+    <div class="section">
+        <h2>1. 요약 (Ensemble Forecast Summary)</h2>
+        <p>PCE YoY (전년 대비 물가상승률)은 현재 **nan%**로 예상됩니다. (12개월 후)</p>
+    </div>
+
+    <div class="section">
+        <h2>2. PCE YoY 예측 비교 차트 (12개월 전망)</h2>
+        <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
+        <h3>월별 예측 데이터 (향후 12개월)</h3>
+        <div class="summary-table"><table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Historical</th>
+      <th>AR1</th>
+      <th>XGBoost</th>
+      <th>LSTM</th>
+      <th>Ensemble</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2025-12-31</th>
+      <td>NaN</td>
+      <td>2.0855</td>
+      <td>2.1572</td>
+      <td>2.1892</td>
+      <td>2.1642</td>
+    </tr>
+    <tr>
+      <th>2026-01-31</th>
+      <td>NaN</td>
+      <td>2.0464</td>
+      <td>2.2038</td>
+      <td>2.2538</td>
+      <td>2.2108</td>
+    </tr>
+    <tr>
+      <th>2026-02-28</th>
+      <td>NaN</td>
+      <td>2.0073</td>
+      <td>2.2494</td>
+      <td>2.3184</td>
+      <td>2.2570</td>
+    </tr>
+    <tr>
+      <th>2026-03-31</th>
+      <td>NaN</td>
+      <td>1.9682</td>
+      <td>2.2927</td>
+      <td>2.3831</td>
+      <td>2.3021</td>
+    </tr>
+    <tr>
+      <th>2026-04-30</th>
+      <td>NaN</td>
+      <td>1.9291</td>
+      <td>2.3330</td>
+      <td>2.4477</td>
+      <td>2.3456</td>
+    </tr>
+    <tr>
+      <th>2026-05-31</th>
+      <td>NaN</td>
+      <td>1.8900</td>
+      <td>2.3695</td>
+      <td>2.5123</td>
+      <td>2.3871</td>
+    </tr>
+    <tr>
+      <th>2026-06-30</th>
+      <td>NaN</td>
+      <td>1.8508</td>
+      <td>2.4021</td>
+      <td>2.5769</td>
+      <td>2.4267</td>
+    </tr>
+    <tr>
+      <th>2026-07-31</th>
+      <td>NaN</td>
+      <td>1.8117</td>
+      <td>2.4307</td>
+      <td>2.6415</td>
+      <td>2.4642</td>
+    </tr>
+    <tr>
+      <th>2026-08-31</th>
+      <td>NaN</td>
+      <td>1.7726</td>
+      <td>2.4556</td>
+      <td>2.7062</td>
+      <td>2.4998</td>
+    </tr>
+    <tr>
+      <th>2026-09-30</th>
+      <td>NaN</td>
+      <td>1.7335</td>
+      <td>2.4774</td>
+      <td>2.7708</td>
+      <td>2.5339</td>
+    </tr>
+    <tr>
+      <th>2026-10-31</th>
+      <td>NaN</td>
+      <td>1.6944</td>
+      <td>2.4970</td>
+      <td>2.8354</td>
+      <td>2.5668</td>
+    </tr>
+    <tr>
+      <th>2026-11-30</th>
+      <td>NaN</td>
+      <td>1.6553</td>
+      <td>2.5155</td>
+      <td>2.9000</td>
+      <td>2.5991</td>
+    </tr>
+  </tbody>
+</table></div>
+    </div>
+    
+    <div class="section">
+        <h2>3. 모델별 예측 정확도 (Simulated)</h2>
+        <p>앙상블 모델의 시뮬레이션된 정확도입니다.</p>
+        <div class="summary-table"><table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>MAE (Simulated)</th>
+      <th>MAPE (Simulated)</th>
+      <th>Report_Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AR(1)</td>
+      <td>0.55</td>
+      <td>15.2</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>XGBoost</td>
+      <td>0.25</td>
+      <td>7.8</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>LSTM</td>
+      <td>0.35</td>
+      <td>10.5</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>Ensemble (Stacking)</td>
+      <td>0.15</td>
+      <td>4.5</td>
+      <td>2025-11-14</td>
+    </tr>
+  </tbody>
+</table></div>
+    </div>
+    
+    <div class="section">
+        <h2>4. 모델 학습 성능 지표</h2>
+        <p>개별 Base Model들의 학습 성능(R-squared, RMSE 등)입니다.</p>
+        <div class="summary-table"><table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Model</th>
+      <th>R-squared</th>
+      <th>Durbin-Watson</th>
+      <th>RMSE</th>
+      <th>Forecast (Final)</th>
+      <th>Report_Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AR(1)</td>
+      <td>0.9749</td>
+      <td>1.5372</td>
+      <td>0.25</td>
+      <td>1.6553</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>XGBoost</td>
+      <td>0.9976</td>
+      <td>1.95</td>
+      <td>0.1846</td>
+      <td>2.5155</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>LSTM</td>
+      <td>0.985</td>
+      <td>2.05</td>
+      <td>0.2326</td>
+      <td>2.9000</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>Ensemble (Stacking)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.5991</td>
+      <td>2025-11-14</td>
+    </tr>
+  </tbody>
+</table></div>
+        <p><strong>Stacking 가중치:</strong> AR(1)=0.0841, XGBoost=0.5102, LSTM=0.4057</p>
+    </div>
+    
+    <div class="section">
+        <h2>5. 주요 거시경제 입력 변수</h2>
+        <p>모델에 사용된 주요 거시경제 변수들의 최근 동향입니다.</p>
+        <h4>FedRate_Target</h4><img src="FedRate_Target_chart_20251115.png" alt="FedRate_Target Chart"><h4>WTI_Oil_Price</h4><img src="WTI_Oil_Price_chart_20251115.png" alt="WTI_Oil_Price Chart"><h4>DXY_Index</h4><img src="DXY_Index_chart_20251115.png" alt="DXY_Index Chart"><h4>Unemployment_Rate</h4><img src="Unemployment_Rate_chart_20251115.png" alt="Unemployment_Rate Chart"><h4>T5YIE_Rate</h4><img src="T5YIE_Rate_chart_20251115.png" alt="T5YIE_Rate Chart"><h4>M2_Money_Stock</h4><img src="M2_Money_Stock_chart_20251115.png" alt="M2_Money_Stock Chart"><h4>Avg_Hourly_Earnings</h4><img src="Avg_Hourly_Earnings_chart_20251115.png" alt="Avg_Hourly_Earnings Chart"><h4>VIX_Index</h4><img src="VIX_Index_chart_20251115.png" alt="VIX_Index Chart">
+    </div>
+    
+    </body>
+    </html>
+    
