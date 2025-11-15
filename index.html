@@ -9,16 +9,20 @@
     <style>
         body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
         h1, h2, h3 { color: #2C3E50; }
-        h1 { border-bottom: 2px solid #3498DB; padding-bottom: 10px; margin-top: 0; }
-        .nav-links a { margin-right: 15px; text-decoration: none; color: #3498DB; font-weight: bold; }
+        /* h1 스타일을 링크에 적용하기 위해 제거 또는 수정 */
+        
         .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
         
         /* Request 4: Full width tables in report/data pages */
         .summary-table, .pandas { width: 100%; }
         .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
-        .summary-table th, .summary-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-        .summary-table th { background-color: #f2f2f2; }
         
+        /* Request 3: All table content center-aligned */
+        .summary-table th, .summary-table td, .pandas th, .pandas td { 
+            border: 1px solid #ddd; padding: 8px; text-align: center; 
+        }
+        .summary-table th { background-color: #f2f2f2; }
+
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
         /* Request 2: 페이지 레이아웃 (좌/우 분할) */
@@ -28,17 +32,36 @@
             .main-content { flex-grow: 1; }
         }
         
-        /* Request 2: 인덱스 페이지 전용 스타일 */
         .report-list-item { margin-bottom: 8px; font-size: 0.95em; list-style-type: none; }
         .report-list-item a { text-decoration: none; color: #555; }
         .report-list-item a:hover { color: #E74C3C; text-decoration: underline; }
         .left-menu ul { padding-left: 0; }
+        
+        /* Request 2: Global Title Style */
+        .global-title-link { 
+            text-decoration: none; 
+            color: inherit; 
+            display: block;
+            border-bottom: 2px solid #3498DB; 
+            padding-bottom: 10px; 
+            margin-top: 0; 
+            margin-bottom: 20px;
+        }
+        .global-title-link h1 { 
+            color: #2C3E50; 
+            margin: 0; 
+            font-size: 2em;
+        }
     </style>
     
     </head>
     <body>
         
-    <h1>PCE Ensemble Forecast Dashboard</h1>
+    
+    <a href="index.html" class="global-title-link">
+        <h1>📊 PCE 앙상블 예측 대시보드</h1>
+    </a>
+    
     <div class="content-wrapper">
         
     <div class="left-menu">
@@ -52,49 +75,26 @@
         </ul>
         
         <h3>전체 보고서 기록 (최신순)</h3>
-        <ul><li>아직 생성된 보고서가 없습니다.</li></ul>
+        <ul><li class="report-list-item"><a href="report_20251114.html">📈 2025년 11월 14일 보고서</a></li></ul>
     </div>
     
         <div class="main-content">
             
-    <h1>📊 PCE 앙상블 예측 대시보드</h1>
-    <p>이 페이지는 정기적으로 생성된 PCE 물가 앙상블 예측 보고서와 누적 데이터베이스에 접근할 수 있는 포털입니다.</p>
-    <div class="content-wrapper">
-        
-    <div class="left-menu">
-        <h2 style="margin-top: 0;">📚 보고서 아카이브</h2>
-        
-        <h3>누적 데이터베이스</h3>
-        <ul>
-            <li class="report-list-item"><a href="forecast_history.html">🗓️ PCE 예측 히스토리</a></li>
-            <li class="report-list-item"><a href="accuracy_history.html">🎯 예측 정확도 히스토리</a></li>
-            <li class="report-list-item"><a href="metrics_history.html">📈 모델 성능 지표</a></li>
-        </ul>
-        
-        <h3>전체 보고서 기록 (최신순)</h3>
-        <ul><li>아직 생성된 보고서가 없습니다.</li></ul>
-    </div>
+    <h2 style="color: #E74C3C; margin-top: 0;">⭐ 최신 PCE 앙상블 예측 (2025년 11월 14일)</h2>
     
+    <div class="section">
         
-    <div class="main-content">
-        <h2 style="color: #E74C3C; margin-top: 0;">⭐ 최신 PCE 앙상블 예측 (2025년 11월 14일)</h2>
-        
-        <div class="section">
-            
         <h3>1. 요약 (Ensemble Forecast Summary)</h3>
         <p>PCE YoY (전년 대비 물가상승률)은 현재 **2.6%**로 예상됩니다. (12개월 후)</p>
     
-        </div>
+    </div>
 
-        <div class="section">
-            <h3>2. PCE YoY 예측 비교 차트 (12개월 전망)</h3>
-            <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
-        </div>
-        
-        <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 16:51:29 PST</p>
+    <div class="section">
+        <h3>2. PCE YoY 예측 비교 차트 (12개월 전망)</h3>
+        <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
     </div>
     
-    </div>
+    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 16:58:52 PST</p>
     
         </div>
     </div>
