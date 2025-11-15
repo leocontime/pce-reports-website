@@ -1,75 +1,69 @@
 
     <!DOCTYPE html>
-    <html>
+    <html lang="ko">
     <head>
-        <title>PCE Metrics History Database</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+        <meta charset="UTF-8">
+        <title>📈 모델 성능 지표 히스토리</title>
         <style>
-            .container { width: 90%; margin: 0 auto; padding-top: 30px; }
-            .dataframe { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-            .dataframe th, .dataframe td { border: 1px solid #e0e0e0; padding: 8px; text-align: center; }
+            body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; }
+            h1 { color: #2C3E50; border-bottom: 2px solid #3498DB; padding-bottom: 5px; }
+            .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+            .pandas th, .pandas td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+            .pandas th { background-color: #f2f2f2; }
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>PCE Metrics History Database</h1>
-            <a href="index.html">⬅️ 인덱스 페이지로 돌아가기</a>
-            
-        <h2>개별 모델 성능 평가 지표 히스토리</h2>
-        <p>모델별 RMSE, R-squared, Durbin-Watson 등의 지표 변화를 추적합니다.</p>
-        <table border="1" class="dataframe dataframe">
+        <h1>📈 모델 성능 지표 히스토리</h1>
+        <p>이 페이지는 각 보고서 발행일(Report Date)별 모델 학습 성능 지표(R-squared, RMSE)를 누적하여 보여줍니다.</p>
+        <div style="font-size: 0.9em; margin-bottom: 15px;">
+            <a href="index.html" style="color: #E74C3C; text-decoration: none; font-weight: bold;">🔙 보고서 목차로 돌아가기</a>
+        </div>
+        <div class='pandas'><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>모델 유형</th>
-      <th>RMSE</th>
+      <th>Model</th>
       <th>R-squared</th>
       <th>Durbin-Watson</th>
-      <th>Final_Forecast</th>
-      <th>생성_일시</th>
-      <th>Generated_Date</th>
+      <th>RMSE</th>
+      <th>Forecast (Final)</th>
+      <th>Report_Date</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>AR(1)</td>
-      <td>0.8240</td>
-      <td>0.7100</td>
-      <td>1.8400</td>
-      <td>-1.2000</td>
-      <td>2025-11-14 14:20:05 PST</td>
-      <td>2025-11-14 14:20</td>
+      <td>0.9749</td>
+      <td>1.5372</td>
+      <td>0.25</td>
+      <td>1.6553</td>
+      <td>2025-11-14</td>
     </tr>
     <tr>
       <td>XGBoost</td>
-      <td>0.4120</td>
-      <td>0.8800</td>
-      <td>2.0200</td>
-      <td>0.0000</td>
-      <td>2025-11-14 14:20:05 PST</td>
-      <td>2025-11-14 14:20</td>
+      <td>0.9976</td>
+      <td>1.95</td>
+      <td>0.1846</td>
+      <td>2.5155</td>
+      <td>2025-11-14</td>
     </tr>
     <tr>
       <td>LSTM</td>
-      <td>0.5510</td>
-      <td>0.8100</td>
-      <td>1.9500</td>
-      <td>0.0000</td>
-      <td>2025-11-14 14:20:05 PST</td>
-      <td>2025-11-14 14:20</td>
+      <td>0.985</td>
+      <td>2.05</td>
+      <td>0.2326</td>
+      <td>2.9000</td>
+      <td>2025-11-14</td>
     </tr>
     <tr>
-      <td>앙상블</td>
-      <td>0.5957</td>
-      <td>0.8000</td>
-      <td>1.9367</td>
-      <td>-0.1009</td>
-      <td>2025-11-14 14:20:05 PST</td>
-      <td>2025-11-14 14:20</td>
+      <td>Ensemble (Stacking)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>2.5991</td>
+      <td>2025-11-14</td>
     </tr>
   </tbody>
-</table>
-        
-        </div>
+</table></div>
     </body>
     </html>
     

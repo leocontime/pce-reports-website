@@ -1,54 +1,59 @@
 
     <!DOCTYPE html>
-    <html>
+    <html lang="ko">
     <head>
-        <title>PCE Accuracy History Database</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+        <meta charset="UTF-8">
+        <title>🎯 예측 정확도 히스토리</title>
         <style>
-            .container { width: 90%; margin: 0 auto; padding-top: 30px; }
-            .dataframe { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-            .dataframe th, .dataframe td { border: 1px solid #e0e0e0; padding: 8px; text-align: center; }
+            body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; }
+            h1 { color: #2C3E50; border-bottom: 2px solid #3498DB; padding-bottom: 5px; }
+            .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+            .pandas th, .pandas td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+            .pandas th { background-color: #f2f2f2; }
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>PCE Accuracy History Database</h1>
-            <a href="index.html">⬅️ 인덱스 페이지로 돌아가기</a>
-            
-        <h2>앙상블 모델 예측 정확도 히스토리</h2>
-        <p>이전 보고서 발행 시점별 실제 PCE와 앙상블 예측값의 오차(Actual - Forecast)를 보여줍니다.</p>
-        <table border="1" class="dataframe dataframe">
+        <h1>🎯 예측 정확도 히스토리</h1>
+        <p>이 페이지는 각 보고서 발행일(Report Date)별 시뮬레이션된 모델 정확도(MAE, MAPE)를 누적하여 보여줍니다.</p>
+        <div style="font-size: 0.9em; margin-bottom: 15px;">
+            <a href="index.html" style="color: #E74C3C; text-decoration: none; font-weight: bold;">🔙 보고서 목차로 돌아가기</a>
+        </div>
+        <div class='pandas'><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>예측 시점</th>
-      <th>모델</th>
-      <th>오차 (Actual - Forecast)</th>
-      <th>Generated_Date</th>
+      <th>Model</th>
+      <th>MAE (Simulated)</th>
+      <th>MAPE (Simulated)</th>
+      <th>Report_Date</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1개월 선행</td>
-      <td>앙상블</td>
-      <td>0.0497</td>
-      <td>2025-11-14 14:20</td>
+      <td>AR(1)</td>
+      <td>0.55</td>
+      <td>15.2</td>
+      <td>2025-11-14</td>
     </tr>
     <tr>
-      <td>3개월 선행</td>
-      <td>앙상블</td>
-      <td>-0.0138</td>
-      <td>2025-11-14 14:20</td>
+      <td>XGBoost</td>
+      <td>0.25</td>
+      <td>7.8</td>
+      <td>2025-11-14</td>
     </tr>
     <tr>
-      <td>6개월 선행</td>
-      <td>앙상블</td>
-      <td>0.0648</td>
-      <td>2025-11-14 14:20</td>
+      <td>LSTM</td>
+      <td>0.35</td>
+      <td>10.5</td>
+      <td>2025-11-14</td>
+    </tr>
+    <tr>
+      <td>Ensemble (Stacking)</td>
+      <td>0.15</td>
+      <td>4.5</td>
+      <td>2025-11-14</td>
     </tr>
   </tbody>
-</table>
-        
-        </div>
+</table></div>
     </body>
     </html>
     
