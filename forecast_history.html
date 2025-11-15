@@ -31,7 +31,7 @@
 
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
-        /* Layout */
+        /* Layout - Content Pages still show the menu/wrapper for standalone viewing */
         @media (min-width: 800px) {
             .content-wrapper { display: flex; gap: 20px; }
             .left-menu { flex: 0 0 250px; padding-right: 20px; border-right: 1px solid #eee; }
@@ -64,7 +64,7 @@
     <body>
         
     
-    <a href="index.html" class="global-title-link">
+    <a href="index.html" class="global-title-link" target="_top"> 
         <h1>📊 PCE 앙상블 예측 대시보드</h1>
     </a>
     
@@ -73,12 +73,15 @@
     <div class="left-menu">
         <h2 style="margin-top: 0;">📚 보고서 아카이브</h2>
         
+        
         <h3>누적 데이터베이스</h3>
         <ul>
+            <li class="report-list-item"><a href="index_content.html">🏠 대시보드 요약</a></li> 
             <li class="report-list-item"><a href="forecast_history.html">🗓️ PCE 예측 히스토리</a></li>
             <li class="report-list-item"><a href="accuracy_history.html">🎯 예측 정확도 히스토리</a></li>
             <li class="report-list-item"><a href="metrics_history.html">📈 모델 성능 지표</a></li>
         </ul>
+    
         
         <h3>전체 보고서 기록 (최신순)</h3>
         <ul><li class="report-list-item"><a href="report_20251115.html">📈 20251115 보고서</a></li></ul>
