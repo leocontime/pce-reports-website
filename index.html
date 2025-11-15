@@ -22,6 +22,12 @@
             border: 1px solid #ddd; padding: 8px; text-align: center; 
         }
         .summary-table th { background-color: #f2f2f2; }
+        
+        /* Link in the summary table cell must be centered too */
+        .summary-table td a { 
+            display: block; 
+            text-align: center;
+        }
 
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
@@ -80,21 +86,36 @@
     
         <div class="main-content">
             
-    <h2 style="color: #E74C3C; margin-top: 0;">⭐ 최신 PCE 앙상블 예측 (2025년 11월 14일)</h2>
+    <h2 style="color: #E74C3C; margin-top: 0;">⭐ PCE 앙상블 예측 대시보드</h2>
     
     <div class="section">
-        
-        <h3>1. 요약 (Ensemble Forecast Summary)</h3>
-        <p>PCE YoY (전년 대비 물가상승률)은 현재 **2.6%**로 예상됩니다. (12개월 후)</p>
-     
+        <h3>1. 전체 보고서 핵심 요약 기록 (최신순)</h3>
+        <p>이전 보고서들의 핵심 예측 요약 및 해당 보고서 링크입니다. 각 날짜를 클릭하여 상세 보고서를 확인하십시오.</p>
+        <div class="summary-table">
+            <table border="1" class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>보고서 날짜</th>
+      <th>최종 PCE YoY 예상치 (12개월 후)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lt;a href="report_20251114.html"&gt;2025년 11월 14일&lt;/a&gt;</td>
+      <td>2.5991</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
     </div>
 
     <div class="section">
-        <h3>2. PCE YoY 예측 비교 차트 (12개월 전망)</h3>
-        <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
+        <h3>2. 최신 예측 비교 차트 (2025년 11월 14일)</h3>
+        <p>가장 최근 실행된 예측의 12개월 전망 차트입니다. (현재 요약 표의 최상단 보고서와 동일)</p>
+        <img src="index_comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
     </div>
     
-    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 18:33:05 PST</p>
+    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 19:28:57 PST</p>
     
         </div>
     </div>

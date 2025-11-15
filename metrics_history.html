@@ -22,6 +22,12 @@
             border: 1px solid #ddd; padding: 8px; text-align: center; 
         }
         .summary-table th { background-color: #f2f2f2; }
+        
+        /* Link in the summary table cell must be centered too */
+        .summary-table td a { 
+            display: block; 
+            text-align: center;
+        }
 
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
@@ -83,7 +89,11 @@
     <h2>📈 모델 성능 지표 히스토리</h2>
     <div class="section" style="background-color: #f7f9fc; border-color: #dce4f1;">
         <h3>📌 지표 개념 설명</h3>
-        <p>이 페이지는 개별 Base Model들의 학습 단계에서의 **성능 지표**를 누적합니다. <ul><li>**R-squared (결정계수):** 모델의 설명력 (1에 가까울수록 좋음).</li><li>**RMSE (제곱근 평균 제곱 오차):** 학습 데이터에 대한 오차의 평균 크기 (낮을수록 좋음).</li><li>**Durbin-Watson:** 잔차의 자기 상관성을 측정하며, **2에 가까울수록** 잔차가 무작위적이고 통계적으로 건전함 (1.5 ~ 2.5 사이 권장).</li></ul></p>
+        <p>이 페이지는 개별 Base Model들의 학습 단계에서의 **성능 지표**를 누적합니다. <ul>
+        <li>**R-squared (결정계수):** 모델의 설명력 (1에 가까울수록 좋음).</li>
+        <li>**RMSE (제곱근 평균 제곱 오차):** 학습 데이터에 대한 오차의 평균 크기 (낮을수록 좋음).</li>
+        <li>**Durbin-Watson:** 잔차의 자기 상관성을 측정하며, **2에 가까울수록** 잔차가 무작위적이고 통계적으로 건전함 (1.5 ~ 2.5 사이 권장).</li>
+        </ul></p>
         <hr style="border-top: 1px solid #dce4f1; margin: 10px 0;">
         <h3>⭐ 모델 성능 평가 요약</h3>
         <p style="color: #2C3E50; font-weight: bold;">Base Model들은 **R-squared가 모두 0.97 이상**으로 매우 높은 학습 적합도를 보였으며, **Durbin-Watson 통계량도 1.9~2.1 사이**에 위치하여 잔차의 자기 상관성 문제가 거의 없어 통계적으로 매우 견고한 것으로 평가됩니다.</p>
