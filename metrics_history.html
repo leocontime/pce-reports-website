@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>📈 모델 성능 지표 히스토리</title>
+        <title>모델 학습 성능 지표</title>
         
         <style>
             /* iFrame Content Only Styles - Only what's needed for the content body */
@@ -26,7 +26,7 @@
     </head>
     <body>
         
-    <h2>📈 모델 성능 지표 히스토리</h2>
+    <h2>모델 학습 성능 지표</h2>
     <div class="section" style="background-color: #f7f9fc; border-color: #dce4f1;">
         <h3>📌 지표 개념 설명</h3>
         <p>이 페이지는 개별 Base Model들의 학습 단계에서의 **성능 지표**를 누적합니다. <ul>
@@ -47,9 +47,7 @@
       <th>R-squared</th>
       <th>Durbin-Watson</th>
       <th>RMSE</th>
-      <th>Forecast (Final)</th>
-      <th>Current_PCE_Actual</th>
-      <th>Current_PCE_Date</th>
+      <th>PCE YoY 예상치</th>
       <th>Report_Date</th>
     </tr>
   </thead>
@@ -60,8 +58,6 @@
       <td>1.5372</td>
       <td>0.25</td>
       <td>1.6553</td>
-      <td>2.1246</td>
-      <td>2025-11-30</td>
       <td>2025-11-15</td>
     </tr>
     <tr>
@@ -70,18 +66,14 @@
       <td>1.95</td>
       <td>0.1846</td>
       <td>2.5155</td>
-      <td>2.1246</td>
-      <td>2025-11-30</td>
       <td>2025-11-15</td>
     </tr>
     <tr>
       <td>LSTM</td>
-      <td>0.985</td>
-      <td>2.05</td>
-      <td>0.2326</td>
-      <td>2.9000</td>
-      <td>2.1246</td>
-      <td>2025-11-30</td>
+      <td>0.988</td>
+      <td>2.15</td>
+      <td>0.2105</td>
+      <td>2.1055</td>
       <td>2025-11-15</td>
     </tr>
     <tr>
@@ -89,9 +81,7 @@
       <td>N/A</td>
       <td>N/A</td>
       <td>N/A</td>
-      <td>2.6414</td>
-      <td>2.1246</td>
-      <td>2025-11-30</td>
+      <td>2.1467</td>
       <td>2025-11-15</td>
     </tr>
   </tbody>

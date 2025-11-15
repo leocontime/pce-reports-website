@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PCE Ensemble Forecast Dashboard - Summary</title>
+        <title>PCE 앙상블 예측 요약</title>
         
         <style>
             /* iFrame Content Only Styles - Only what's needed for the content body */
@@ -26,42 +26,39 @@
     </head>
     <body>
         
-    <h2 style="color: #E74C3C; margin-top: 0;">⭐ PCE 앙상블 예측 요약</h2>
+    <h2>🏠 PCE 앙상블 예측 요약 대시보드</h2>
+    <p>✅ **생성 시점:** 2025-11-15 02:59:00 PST</p>
     
     <div class="section">
-        <h3>1. 전체 보고서 핵심 요약 기록 (최신순)</h3>
-        <p>이전 보고서들의 핵심 예측 요약 및 해당 보고서 링크입니다. 각 날짜를 클릭하여 상세 보고서를 확인하십시오.</p>
-        <div class="summary-table">
-            <table border="1" class="dataframe summary-table">
+        <h3>1. 앙상블 예측 최근 기록 (최신 5회)</h3>
+        <table border="1" class="dataframe summary-table">
   <thead>
     <tr style="text-align: right;">
       <th>보고서 날짜</th>
-      <th>PCE YoY 예상치</th>
+      <th>12개월 PCE YoY 예상치 (%)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="report_20251115.html?v=20251115094419" target="mainFrame">20251115</a></td>
-      <td>2.6414</td>
+      <td><a href="report_20251115.html?v=20251115105900" target="mainFrame">20251115</a></td>
+      <td>2.1467</td>
     </tr>
   </tbody>
 </table>
-        </div>
-    </div>
-
-    <div class="section">
-        <h3>2. 전체 예측차트 비교 (최신순)</h3>
-        <p>각 시점에 생성된 보고서의 PCE YoY 12개월 전망 차트 기록입니다. (최근 5개 보고서)</p>
-        
-            <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-                <h4 style="color: #34495E; margin-top: 0; font-size: 1.1em;">1) 최종 예상치: 2.6414% (20251115 보고서 기준)</h4>
-                <p>이 보고서 생성 시점의 12개월 전망 차트입니다. (상세 보고서 링크: <a href="report_20251115.html?v=20251115094419" target="mainFrame">20251115</a>)</p>
-                <img src="index_comparison_chart_20251115.png" alt="PCE Forecast Chart for 2025-11-15">
-            </div>
-             
+        <p style="font-size: 0.9em; color: #666;">* '보고서 날짜'를 클릭하면 해당 날짜의 상세 보고서로 이동합니다.</p>
     </div>
     
-    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-15 01:44:15 PST</p>
+    <div class="section">
+        <h3>2. 시계열 예측 비교 차트 (최근 5회 기록)</h3>
+        <p style="font-size: 0.9em; color: #666;">(차트의 실제 데이터는 **최근 24개월**로 제한됩니다.)</p>
+        
+            <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+                <h4 style="color: #34495E; margin-top: 0; font-size: 1.1em;">1) 최종 예상치: 2.1467% (20251115 보고서 기준)</h4>
+                <p>이 보고서 생성 시점의 12개월 전망 차트입니다. (상세 보고서 링크: <a href="report_20251115.html?v=20251115105900" target="mainFrame">20251115</a>)</p>
+                <img src="index_comparison_chart_20251115.png" alt="PCE Forecast Chart for 2025-11-15">
+            </div>
+            
+    </div>
     
     </body>
     </html>
