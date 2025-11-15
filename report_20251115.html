@@ -14,31 +14,75 @@
             .section h3 { margin-top: 0; }
             
             /* Table styles (Full width, dark header) */
-            .summary-table, .pandas { width: 100%; } /* Ensure container is full width */
+            .summary-table, .pandas { width: 100%; }
             .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
             .summary-table th, .summary-table td, .pandas th, .pandas td { 
                 border: 1px solid #ddd; padding: 10px; text-align: center; 
             }
             .summary-table th { 
-                background-color: #34495E; /* Dark Blue/Grey for header (User Request) */
+                background-color: #34495E;
                 color: white; 
             }
-            .summary-table tr:nth-child(even) { background-color: #f9f9f9; } /* Alternating row color */
+            .summary-table tr:nth-child(even) { background-color: #f9f9f9; }
             
             img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+            
+            /* 🚀 Mobile Navigation Styles (New) */
+            .mobile-nav-top, .mobile-nav-bottom {
+                display: none; /* 기본적으로 숨김 (데스크톱 뷰) */
+                width: 100%;
+                padding: 10px 0;
+                margin-bottom: 15px;
+            }
+            .mobile-nav-top { border-bottom: 1px solid #eee; }
+            .mobile-nav-top a { 
+                text-decoration: none; 
+                color: #2980B9; 
+                font-weight: bold;
+                padding: 0 5px;
+            }
+            .mobile-nav-bottom h3 { 
+                font-size: 1.1em; 
+                margin-top: 5px; 
+                border-top: 1px solid #eee; 
+                padding-top: 10px; 
+            }
+            .mobile-nav-bottom ul { list-style: none; padding-left: 0; }
+            .mobile-nav-bottom ul li { 
+                margin-bottom: 5px; 
+                font-size: 0.9em;
+            }
+            .mobile-nav-bottom .active-link a {
+                color: #E74C3C;
+                font-weight: bold;
+            }
+
+            /* 🚀 모바일 뷰 (800px 이하)에서만 Nav 보이기 */
+            @media (max-width: 799px) {
+                .mobile-nav-top, .mobile-nav-bottom { 
+                    display: block; 
+                }
+            }
         </style>
         
     </head>
     <body>
         
+    <div class="mobile-nav-top">
+        <a href="index_content.html?v=20251115183931"  target="mainFrame">🏠 요약</a> | 
+        <a href="forecast_history.html?v=20251115183931"  target="mainFrame">🗓️ 예측 히스토리</a> | 
+        <a href="accuracy_history.html?v=20251115183931"  target="mainFrame">🎯 정확도 히스토리</a> | 
+        <a href="metrics_history.html?v=20251115183931"  target="mainFrame">📈 성능 지표</a>
+    </div>
+    
     <h2>PCE 앙상블 예측 보고서 (2025년 11월 15일)</h2>
-    <p>✅ **생성 시점:** 2025-11-15 10:31:06 PST</p>
+    <p>✅ **생성 시점:** 2025-11-15 10:39:31 PST</p>
     
     <div class="section">
     <h2>1. 앙상블 예측 요약</h2> 
     
     <p><u>**2025년 11월**</u> 기준 PCE YoY (전년 대비 물가상승률)은 **2.1246%** 이며, 
-    <u>**2026년 11월**</u> PCE YoY는 **2.1467%**로 예상됩니다.</p>
+    <u>**2026년 11월**</u> PCE YoY는 **2.1494%**로 예상됩니다.</p>
     <div style="margin-top: 15px; padding: 10px; border-left: 5px solid #E74C3C; background-color: #fcebeb;">
         <h4>🔍 PCE YoY 지표 설명</h4>
         <p style="margin: 0;">PCE(개인소비지출) 가격지수 전년 대비 상승률은 **미국 연방준비제도(Fed)가 가장 중요하게 여기는 물가 지표**이며, 2% 수준을 Fed의 장기 목표로 합니다. 본 예측은 향후 12개월간 PCE YoY의 추이를 전망하며, **장기 균형치와 현재 거시경제 상황을 반영**합니다.</p>
@@ -72,85 +116,85 @@
       <th>2025-12-31</th>
       <td>2.0855</td>
       <td>2.1572</td>
-      <td>2.2230</td>
-      <td>2.1690</td>
+      <td>2.1152</td>
+      <td>2.1267</td>
     </tr>
     <tr>
       <th>2026-01-31</th>
       <td>2.0464</td>
       <td>2.2038</td>
-      <td>2.2174</td>
-      <td>2.1784</td>
+      <td>2.1599</td>
+      <td>2.1558</td>
     </tr>
     <tr>
       <th>2026-02-28</th>
       <td>2.0073</td>
       <td>2.2494</td>
-      <td>2.2040</td>
-      <td>2.1842</td>
+      <td>2.1875</td>
+      <td>2.1777</td>
     </tr>
     <tr>
       <th>2026-03-31</th>
       <td>1.9682</td>
       <td>2.2927</td>
-      <td>2.1837</td>
-      <td>2.1864</td>
+      <td>2.1861</td>
+      <td>2.1873</td>
     </tr>
     <tr>
       <th>2026-04-30</th>
       <td>1.9291</td>
       <td>2.3330</td>
-      <td>2.1582</td>
-      <td>2.1853</td>
+      <td>2.1534</td>
+      <td>2.1834</td>
     </tr>
     <tr>
       <th>2026-05-31</th>
       <td>1.8900</td>
       <td>2.3695</td>
-      <td>2.1293</td>
-      <td>2.1813</td>
+      <td>2.0966</td>
+      <td>2.1684</td>
     </tr>
     <tr>
       <th>2026-06-30</th>
       <td>1.8508</td>
       <td>2.4021</td>
-      <td>2.0992</td>
-      <td>2.1752</td>
+      <td>2.0309</td>
+      <td>2.1483</td>
     </tr>
     <tr>
       <th>2026-07-31</th>
       <td>1.8117</td>
       <td>2.4307</td>
-      <td>2.0703</td>
-      <td>2.1679</td>
+      <td>1.9742</td>
+      <td>2.1301</td>
     </tr>
     <tr>
       <th>2026-08-31</th>
       <td>1.7726</td>
       <td>2.4556</td>
-      <td>2.0448</td>
-      <td>2.1605</td>
+      <td>1.9414</td>
+      <td>2.1198</td>
     </tr>
     <tr>
       <th>2026-09-30</th>
       <td>1.7335</td>
       <td>2.4774</td>
-      <td>2.0246</td>
-      <td>2.1539</td>
+      <td>1.9401</td>
+      <td>2.1206</td>
     </tr>
     <tr>
       <th>2026-10-31</th>
       <td>1.6944</td>
       <td>2.4970</td>
-      <td>2.0111</td>
-      <td>2.1490</td>
+      <td>1.9676</td>
+      <td>2.1319</td>
     </tr>
     <tr>
       <th>2026-11-30</th>
       <td>1.6553</td>
       <td>2.5155</td>
-      <td>2.0055</td>
-      <td>2.1467</td>
+      <td>2.0123</td>
+      <td>2.1494</td>
     </tr>
   </tbody>
 </table>
@@ -305,10 +349,10 @@
     </tr>
     <tr>
       <td>LSTM</td>
-      <td>0.19</td>
-      <td>6.5</td>
-      <td>0.27</td>
-      <td>0.975</td>
+      <td>0.15</td>
+      <td>5.0</td>
+      <td>0.22</td>
+      <td>0.985</td>
       <td>2025-11-15</td>
     </tr>
     <tr>
@@ -361,10 +405,10 @@
     </tr>
     <tr>
       <td>LSTM</td>
-      <td>0.988</td>
-      <td>2.15</td>
-      <td>0.2105</td>
-      <td>2.1055</td>
+      <td>0.985</td>
+      <td>2.01</td>
+      <td>0.198</td>
+      <td>2.0123</td>
       <td>2025-11-15</td>
     </tr>
     <tr>
@@ -372,7 +416,7 @@
       <td>N/A</td>
       <td>N/A</td>
       <td>N/A</td>
-      <td>2.1467</td>
+      <td>2.1494</td>
       <td>2025-11-15</td>
     </tr>
   </tbody>
@@ -385,6 +429,10 @@
     <h4>FedRate_Target</h4><img src='FedRate_Target_chart_20251115.png' alt='FedRate_Target Chart'><h4>WTI_Oil_Price</h4><img src='WTI_Oil_Price_chart_20251115.png' alt='WTI_Oil_Price Chart'><h4>DXY_Index</h4><img src='DXY_Index_chart_20251115.png' alt='DXY_Index Chart'><h4>Unemployment_Rate</h4><img src='Unemployment_Rate_chart_20251115.png' alt='Unemployment_Rate Chart'><h4>T5YIE_Rate</h4><img src='T5YIE_Rate_chart_20251115.png' alt='T5YIE_Rate Chart'><h4>M2_Money_Stock</h4><img src='M2_Money_Stock_chart_20251115.png' alt='M2_Money_Stock Chart'><h4>Avg_Hourly_Earnings</h4><img src='Avg_Hourly_Earnings_chart_20251115.png' alt='Avg_Hourly_Earnings Chart'><h4>VIX_Index</h4><img src='VIX_Index_chart_20251115.png' alt='VIX_Index Chart'>
     </div>
     
+    <div class="mobile-nav-bottom">
+        <h3>📚 전체 보고서 기록 (최신순)</h3>
+        <ul>
+    <li class="report-list-item active-link"><a href="report_20251115.html?v=20251115183931"  target="mainFrame">📈 20251115 보고서</a></li></ul></div>
     </body>
     </html>
     
