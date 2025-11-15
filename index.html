@@ -29,6 +29,7 @@
             text-align: center;
         }
 
+        /* [수정] 깨진 이미지 아이콘이 보이지 않도록 기본 설정 */
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
         /* Layout */
@@ -92,20 +93,21 @@
         <h3>1. 전체 보고서 핵심 요약 기록 (최신순)</h3>
         <p>이전 보고서들의 핵심 예측 요약 및 해당 보고서 링크입니다. 각 날짜(YYYY-MM-DD)를 클릭하여 상세 보고서를 확인하십시오.</p>
         <div class="summary-table">
-            <table border="1" class="dataframe summary-table">
-  <thead>
-    <tr style="text-align: right;">
-      <th>보고서 날짜</th>
-      <th>최종 PCE YoY 예상치 (12개월 후)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="report_20251114.html">2025-11-14</a></td>
-      <td>2.5991</td>
-    </tr>
-  </tbody>
-</table>
+            
+    <table class="summary-table">
+        <thead>
+            <tr><th>보고서 날짜</th><th>최종 PCE YoY 예상치 (12개월 후)</th></tr>
+        </thead>
+        <tbody>
+            
+        <tr>
+            <td><a href="report_20251114.html">2025-11-14</a></td> 
+            <td>2.5991</td>
+        </tr>
+        
+        </tbody>
+    </table>
+    
         </div>
     </div>
 
@@ -115,7 +117,7 @@
         <img src="chart_generation_failed.png" alt="PCE Forecast Comparison Chart">
     </div>
     
-    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 19:47:55 PST</p>
+    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 19:52:18 PST</p>
     
         </div>
     </div>
