@@ -8,16 +8,15 @@
         
     <style>
         body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
-        h1, h2, h3 { color: #2C3E50; }
-        /* h1 스타일을 링크에 적용하기 위해 제거 또는 수정 */
+        h2, h3 { color: #2C3E50; }
         
         .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
         
-        /* Request 4: Full width tables in report/data pages */
+        /* 요청 4: Full width tables in report/data pages */
         .summary-table, .pandas { width: 100%; }
         .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
         
-        /* Request 3: All table content center-aligned */
+        /* 요청 3: All table content center-aligned */
         .summary-table th, .summary-table td, .pandas th, .pandas td { 
             border: 1px solid #ddd; padding: 8px; text-align: center; 
         }
@@ -25,7 +24,7 @@
 
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
         
-        /* Request 2: 페이지 레이아웃 (좌/우 분할) */
+        /* 요청 2: 페이지 레이아웃 (좌/우 분할) */
         @media (min-width: 800px) {
             .content-wrapper { display: flex; gap: 20px; }
             .left-menu { flex: 0 0 250px; padding-right: 20px; border-right: 1px solid #eee; }
@@ -37,7 +36,7 @@
         .report-list-item a:hover { color: #E74C3C; text-decoration: underline; }
         .left-menu ul { padding-left: 0; }
         
-        /* Request 2: Global Title Style */
+        /* 요청 2: Global Title Style */
         .global-title-link { 
             text-decoration: none; 
             color: inherit; 
