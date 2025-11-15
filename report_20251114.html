@@ -29,22 +29,22 @@
     
         
     <h1>PCE 앙상블 예측 보고서 (2025년 11월 14일)</h1>
-    <p>✅ **생성 시점:** 2025-11-14 16:24:35 PST</p>
+    <p>✅ **생성 시점:** 2025-11-14 16:33:32 PST</p>
     
     <div class="section">
         <h2>1. 요약 (Ensemble Forecast Summary)</h2>
-        <p>PCE YoY (전년 대비 물가상승률)은 현재 **nan%**로 예상됩니다. (12개월 후)</p>
+        <p>PCE YoY (전년 대비 물가상승률)은 현재 **2.6%**로 예상됩니다. (12개월 후)</p>
     </div>
 
     <div class="section">
         <h2>2. PCE YoY 예측 비교 차트 (12개월 전망)</h2>
         <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
         <h3>월별 예측 데이터 (향후 12개월)</h3>
-        <div class="summary-table"><table border="1" class="dataframe summary-table">
+        <div class="summary-table">
+            <table border="1" class="dataframe summary-table">
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Historical</th>
       <th>AR1</th>
       <th>XGBoost</th>
       <th>LSTM</th>
@@ -56,13 +56,11 @@
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>2025-12-31</th>
-      <td>NaN</td>
       <td>2.0855</td>
       <td>2.1572</td>
       <td>2.1892</td>
@@ -70,7 +68,6 @@
     </tr>
     <tr>
       <th>2026-01-31</th>
-      <td>NaN</td>
       <td>2.0464</td>
       <td>2.2038</td>
       <td>2.2538</td>
@@ -78,7 +75,6 @@
     </tr>
     <tr>
       <th>2026-02-28</th>
-      <td>NaN</td>
       <td>2.0073</td>
       <td>2.2494</td>
       <td>2.3184</td>
@@ -86,7 +82,6 @@
     </tr>
     <tr>
       <th>2026-03-31</th>
-      <td>NaN</td>
       <td>1.9682</td>
       <td>2.2927</td>
       <td>2.3831</td>
@@ -94,7 +89,6 @@
     </tr>
     <tr>
       <th>2026-04-30</th>
-      <td>NaN</td>
       <td>1.9291</td>
       <td>2.3330</td>
       <td>2.4477</td>
@@ -102,7 +96,6 @@
     </tr>
     <tr>
       <th>2026-05-31</th>
-      <td>NaN</td>
       <td>1.8900</td>
       <td>2.3695</td>
       <td>2.5123</td>
@@ -110,7 +103,6 @@
     </tr>
     <tr>
       <th>2026-06-30</th>
-      <td>NaN</td>
       <td>1.8508</td>
       <td>2.4021</td>
       <td>2.5769</td>
@@ -118,7 +110,6 @@
     </tr>
     <tr>
       <th>2026-07-31</th>
-      <td>NaN</td>
       <td>1.8117</td>
       <td>2.4307</td>
       <td>2.6415</td>
@@ -126,7 +117,6 @@
     </tr>
     <tr>
       <th>2026-08-31</th>
-      <td>NaN</td>
       <td>1.7726</td>
       <td>2.4556</td>
       <td>2.7062</td>
@@ -134,7 +124,6 @@
     </tr>
     <tr>
       <th>2026-09-30</th>
-      <td>NaN</td>
       <td>1.7335</td>
       <td>2.4774</td>
       <td>2.7708</td>
@@ -142,7 +131,6 @@
     </tr>
     <tr>
       <th>2026-10-31</th>
-      <td>NaN</td>
       <td>1.6944</td>
       <td>2.4970</td>
       <td>2.8354</td>
@@ -150,14 +138,14 @@
     </tr>
     <tr>
       <th>2026-11-30</th>
-      <td>NaN</td>
       <td>1.6553</td>
       <td>2.5155</td>
       <td>2.9000</td>
       <td>2.5991</td>
     </tr>
   </tbody>
-</table></div>
+</table>
+        </div>
     </div>
     
     <div class="section">
@@ -169,6 +157,8 @@
       <th>Model</th>
       <th>MAE (Simulated)</th>
       <th>MAPE (Simulated)</th>
+      <th>RMSE (Simulated)</th>
+      <th>R-squared (Simulated)</th>
       <th>Report_Date</th>
     </tr>
   </thead>
@@ -177,24 +167,32 @@
       <td>AR(1)</td>
       <td>0.55</td>
       <td>15.2</td>
+      <td>0.65</td>
+      <td>0.95</td>
       <td>2025-11-14</td>
     </tr>
     <tr>
       <td>XGBoost</td>
       <td>0.25</td>
       <td>7.8</td>
+      <td>0.30</td>
+      <td>0.99</td>
       <td>2025-11-14</td>
     </tr>
     <tr>
       <td>LSTM</td>
       <td>0.35</td>
       <td>10.5</td>
+      <td>0.40</td>
+      <td>0.98</td>
       <td>2025-11-14</td>
     </tr>
     <tr>
       <td>Ensemble (Stacking)</td>
       <td>0.15</td>
       <td>4.5</td>
+      <td>0.20</td>
+      <td>0.99</td>
       <td>2025-11-14</td>
     </tr>
   </tbody>

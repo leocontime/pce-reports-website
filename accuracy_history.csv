@@ -1,5 +1,5 @@
-Model,MAE (Simulated),MAPE (Simulated),Report_Date
-AR(1),0.55,15.2,2025-11-14
-XGBoost,0.25,7.8,2025-11-14
-LSTM,0.35,10.5,2025-11-14
-Ensemble (Stacking),0.15,4.5,2025-11-14
+Model,MAE (Simulated),MAPE (Simulated),RMSE (Simulated),R-squared (Simulated),Report_Date
+AR(1),0.55,15.2,0.65,0.95,2025-11-14
+XGBoost,0.25,7.8,0.3,0.99,2025-11-14
+LSTM,0.35,10.5,0.4,0.98,2025-11-14
+Ensemble (Stacking),0.15,4.5,0.2,0.99,2025-11-14
