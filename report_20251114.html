@@ -1,5 +1,30 @@
-<div class="main-content">
-            
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCE 앙상블 예측 보고서 (2025년 11월 14일)</title>
+    
+    <style>
+        /* iFrame Content Only Styles - Only what's needed for the content body */
+        body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
+        h2, h3, h4 { color: #2C3E50; }
+        .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
+        .section h3 { margin-top: 0; }
+        
+        /* Table styles */
+        .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+        .summary-table th, .summary-table td, .pandas th, .pandas td { 
+            border: 1px solid #ddd; padding: 8px; text-align: center; 
+        }
+        .summary-table th { background-color: #f2f2f2; }
+        
+        img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+    
+</head>
+<body>
+    
     <h2>PCE 앙상블 예측 보고서 (2025년 11월 14일)</h2>
     <p>✅ **생성 시점:** 2025-11-14 23:59:30 PST</p>
     
@@ -212,8 +237,8 @@
         <div style="margin-bottom: 15px;">
             이 페이지는 개별 Base Model들의 학습 단계에서의 **성능 지표**를 누적합니다. <ul>
         <li>**R-squared (결정계수):** 모델의 설명력 (1에 가까울수록 좋음).</li>
-        <li>**Durbin-Watson:** 잔차의 자기 상관성을 측정하며, **2에 가까울수록** 잔차가 무작위적이고 통계적으로 건전함 (1.5 ~ 2.5 사이 권장).</li>
         <li>**RMSE (제곱근 평균 제곱 오차):** 학습 데이터에 대한 오차의 평균 크기 (낮을수록 좋음).</li>
+        <li>**Durbin-Watson:** 잔차의 자기 상관성을 측정하며, **2에 가까울수록** 잔차가 무작위적이고 통계적으로 건전함 (1.5 ~ 2.5 사이 권장).</li>
         </ul>
             <p style="color: #2C3E50; font-weight: bold;">⭐ 평가: Base Model들은 **R-squared가 모두 0.97 이상**으로 매우 높은 학습 적합도를 보였으며, **Durbin-Watson 통계량도 1.9~2.1 사이**에 위치하여 잔차의 자기 상관성 문제가 거의 없어 통계적으로 매우 견고한 것으로 평가됩니다.</p>
         </div>
@@ -272,4 +297,5 @@
         <h4>FedRate_Target</h4><img src="FedRate_Target_chart_20251115.png" alt="FedRate_Target Chart"><h4>WTI_Oil_Price</h4><img src="WTI_Oil_Price_chart_20251115.png" alt="WTI_Oil_Price Chart"><h4>DXY_Index</h4><img src="DXY_Index_chart_20251115.png" alt="DXY_Index Chart"><h4>Unemployment_Rate</h4><img src="Unemployment_Rate_chart_20251115.png" alt="Unemployment_Rate Chart"><h4>T5YIE_Rate</h4><img src="T5YIE_Rate_chart_20251115.png" alt="T5YIE_Rate Chart"><h4>M2_Money_Stock</h4><img src="M2_Money_Stock_chart_20251115.png" alt="M2_Money_Stock Chart"><h4>Avg_Hourly_Earnings</h4><img src="Avg_Hourly_Earnings_chart_20251115.png" alt="Avg_Hourly_Earnings Chart"><h4>VIX_Index</h4><img src="VIX_Index_chart_20251115.png" alt="VIX_Index Chart">
     </div>
     
-</div>
+</body>
+</html>
