@@ -30,14 +30,14 @@
             font-size: 1.6em; 
         }
         
-        @media (min-width: 800px) {
+        @media (min-width: 500px) { /* 🛠️ [수정 2] 500px 이상일 때 메뉴 보임 */
             .content-wrapper { 
                 display: flex; 
                 gap: 20px; 
                 height: calc(100vh - 120px); 
             }
             .left-menu { 
-                display: block; /* [FIX 2] 800px 이상일 때 확실히 표시 */
+                display: block; 
                 flex: 0 0 250px; 
                 padding-right: 20px; 
                 border-right: 1px solid #eee; 
@@ -49,9 +49,9 @@
             }
         }
         
-        @media (max-width: 799px) {
+        @media (max-width: 499px) { /* 🛠️ [수정 2] 499px 이하일 때 숨김 */
             .content-wrapper { display: block; }
-            .left-menu { display: none; } /* [FIX 2] 799px 이하일 때 숨김 */
+            .left-menu { display: none; } 
             .main-content { width: 100%; height: auto; }
             #mainFrame { min-height: 800px; }
         }
@@ -71,6 +71,11 @@
         .summary-table th { 
             background-color: #34495E; 
             color: white; 
+            /* 🛠️ [수정 1] 테이블 헤더 텍스트 줄 바꿈 허용 */
+            word-break: break-word; 
+            white-space: normal;    
+            height: 40px; 
+            vertical-align: middle; 
         }
         .summary-table tr:nth-child(even) { background-color: #f9f9f9; } 
         
@@ -95,15 +100,15 @@
         
         <h3>누적 데이터베이스</h3>
         <ul>
-            <li class="report-list-item"><a href="index_content.html?v=20251115185608" onclick="document.getElementById('mainFrame').src='index_content.html?v=20251115185608'; return false;">🏠 대시보드 요약</a></li> 
-            <li class="report-list-item"><a href="forecast_history.html?v=20251115185608" target="mainFrame">🗓️ PCE 예측 히스토리</a></li>
-            <li class="report-list-item"><a href="accuracy_history.html?v=20251115185608" target="mainFrame">🎯 예측 정확도 히스토리</a></li>
-            <li class="report-list-item"><a href="metrics_history.html?v=20251115185608" target="mainFrame">📈 모델 성능 지표</a></li>
+            <li class="report-list-item"><a href="index_content.html?v=20251115190717" onclick="document.getElementById('mainFrame').src='index_content.html?v=20251115190717'; return false;">🏠 대시보드 요약</a></li> 
+            <li class="report-list-item"><a href="forecast_history.html?v=20251115190717" target="mainFrame">🗓️ PCE 예측 히스토리</a></li>
+            <li class="report-list-item"><a href="accuracy_history.html?v=20251115190717" target="mainFrame">🎯 예측 정확도 히스토리</a></li>
+            <li class="report-list-item"><a href="metrics_history.html?v=20251115190717" target="mainFrame">📈 모델 성능 지표</a></li>
         </ul>
     
         
         <h3>전체 보고서 기록 (최신순)</h3>
-        <ul><li class="report-list-item"><a href="report_20251115.html?v=20251115185608" target="mainFrame">📈 20251115 보고서</a></li></ul>
+        <ul><li class="report-list-item"><a href="report_20251115.html?v=20251115190717" target="mainFrame">📈 20251115 보고서</a></li></ul>
     </div>
     
         <div class="main-content">
