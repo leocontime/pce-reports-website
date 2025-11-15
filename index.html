@@ -1,59 +1,78 @@
 
-    <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PCE Ensemble Forecast Reports</title>
-        
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>PCE Ensemble Forecast Dashboard</title>
+            
     <style>
         body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
         h1, h2, h3 { color: #2C3E50; }
-        h1 { border-bottom: 2px solid #3498DB; padding-bottom: 10px; }
+        h1 { border-bottom: 2px solid #3498DB; padding-bottom: 10px; margin-top: 0; }
         .nav-links a { margin-right: 15px; text-decoration: none; color: #3498DB; font-weight: bold; }
         .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
         .summary-table th, .summary-table td { border: 1px solid #ddd; padding: 8px; text-align: center; }
         .summary-table th { background-color: #f2f2f2; }
         img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+        
+        /* 인덱스 페이지 레이아웃 (좌/우 분할) */
+        @media (min-width: 800px) {
+            .content-wrapper { display: flex; gap: 20px; }
+            .left-menu { flex: 0 0 250px; padding-right: 20px; border-right: 1px solid #eee; }
+            .main-content { flex-grow: 1; }
+        }
+        
+        /* 인덱스 페이지 전용 스타일 */
+        .report-list-item { margin-bottom: 8px; font-size: 0.95em; list-style-type: none; }
+        .report-list-item a { text-decoration: none; color: #555; }
+        .report-list-item a:hover { color: #E74C3C; text-decoration: underline; }
+        .left-menu ul { padding-left: 0; }
     </style>
     
-    </head>
-    <body>
+        </head>
+        <body>
+            
+    <h1>📊 PCE 앙상블 예측 대시보드</h1>
+    <p>이 페이지는 정기적으로 생성된 PCE 물가 앙상블 예측 보고서와 누적 데이터베이스에 접근할 수 있는 포털입니다.</p>
+    
+    <div class="content-wrapper">
         
-    <div class="nav-links" style="margin-bottom: 25px;">
-        <a href="index.html">🏠 메인</a>
-        <a href="forecast_history.html">🗓️ 예측 히스토리</a>
-        <a href="accuracy_history.html">🎯 정확도 히스토리</a>
-        <a href="metrics_history.html">📈 모델 성능</a>
-    </div>
-    
+    <div class="left-menu">
+        <h2 style="margin-top: 0;">📚 보고서 아카이브</h2>
         
-    <h1>📊 PCE 앙상블 예측 시스템 (Reports Index)</h1>
-    <p>이 페이지는 정기적으로 생성된 PCE 물가 앙상블 예측 보고서 및 누적 데이터베이스의 목차입니다.</p>
-    
-    <div class="section">
-        <h2>최신 보고서</h2>
-        <p>가장 최근에 발행된 보고서입니다. (2025년 11월 14일)</p>
-        <p><a href="report_20251114.html" style="font-size: 1.2em; color: #E74C3C; font-weight: bold;">➡️ 최신 보고서 바로가기 (2025년 11월 14일)</a></p>
-    </div>
-    
-    <div class="section">
-        <h2>전체 보고서 기록</h2>
-        <ul><li><a href="report_20251114.html">📈 2025년 11월 14일 예측 보고서</a></li></ul>
-    </div>
-    
-    <div class="section">
-        <h2>누적 데이터베이스</h2>
-        <p>모델 예측 및 성능 지표의 누적 기록입니다.</p>
+        <h3>누적 데이터베이스</h3>
         <ul>
-            <li><a href="forecast_history.html">🗓️ PCE 예측 히스토리 (Forecast History)</a></li>
-            <li><a href="accuracy_history.html">🎯 예측 정확도 히스토리 (Accuracy History)</a></li>
-            <li><a href="metrics_history.html">📈 모델 성능 지표 히스토리 (Metrics History)</a></li>
+            <li class="report-list-item"><a href="forecast_history.html">🗓️ PCE 예측 히스토리</a></li>
+            <li class="report-list-item"><a href="accuracy_history.html">🎯 예측 정확도 히스토리</a></li>
+            <li class="report-list-item"><a href="metrics_history.html">📈 모델 성능 지표</a></li>
         </ul>
+        
+        <h3>전체 보고서 기록 (최신순)</h3>
+        <ul><li class="report-list-item"><a href="report_20251114.html">📈 2025년 11월 14일 보고서</a></li></ul>
     </div>
     
-    <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 16:33:32 PST</p>
+        
+    <div class="main-content">
+        <h2 style="color: #E74C3C; margin-top: 0;">⭐ 최신 PCE 앙상블 예측 (2025년 11월 14일)</h2>
+        
+        <div class="section">
+            
+        <h3>1. 요약 (Ensemble Forecast Summary)</h3>
+        <p>PCE YoY (전년 대비 물가상승률)은 현재 **2.6%**로 예상됩니다. (12개월 후)</p>
     
-    </body>
-    </html>
+        </div>
+
+        <div class="section">
+            <h3>2. PCE YoY 예측 비교 차트 (12개월 전망)</h3>
+            <img src="comparison_chart_20251114.png" alt="PCE Forecast Comparison Chart">
+        </div>
+        
+        <p style="text-align: right; font-size: 0.8em; color: #777;">마지막 업데이트: 2025-11-14 16:42:42 PST</p>
+    </div>
     
+    </div>
+    
+        </body>
+        </html>
+        
