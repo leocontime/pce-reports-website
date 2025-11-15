@@ -6,89 +6,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>🎯 예측 정확도 히스토리</title>
         
-    <style>
-        body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
-        h2, h3 { color: #2C3E50; }
+        <style>
+            /* iFrame Content Only Styles - Only what's needed for the content body */
+            body { font-family: sans-serif; max-width: 1200px; margin: auto; padding: 20px; line-height: 1.6; color: #333; }
+            h2, h3, h4 { color: #2C3E50; }
+            .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
+            .section h3 { margin-top: 0; }
+            
+            /* Table styles */
+            .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+            .summary-table th, .summary-table td, .pandas th, .pandas td { 
+                border: 1px solid #ddd; padding: 8px; text-align: center; 
+            }
+            .summary-table th { background-color: #f2f2f2; }
+            
+            img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+        </style>
         
-        .section { margin-bottom: 30px; border: 1px solid #eee; padding: 15px; border-radius: 5px; }
-        .section h3 { margin-top: 0; }
-        
-        /* Table styles */
-        .summary-table, .pandas { width: 100%; }
-        .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
-        
-        /* All table content center-aligned */
-        .summary-table th, .summary-table td, .pandas th, .pandas td { 
-            border: 1px solid #ddd; padding: 8px; text-align: center; 
-        }
-        .summary-table th { background-color: #f2f2f2; }
-        
-        /* Link in the summary table cell must be centered too */
-        .summary-table td a { 
-            display: block; 
-            text-align: center;
-        }
-
-        img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
-        
-        /* Layout - Content Pages still show the menu/wrapper for standalone viewing */
-        @media (min-width: 800px) {
-            .content-wrapper { display: flex; gap: 20px; }
-            .left-menu { flex: 0 0 250px; padding-right: 20px; border-right: 1px solid #eee; }
-            .main-content { flex-grow: 1; }
-        }
-        
-        .report-list-item { margin-bottom: 8px; font-size: 0.95em; list-style-type: none; }
-        .report-list-item a { text-decoration: none; color: #555; }
-        .report-list-item a:hover { color: #E74C3C; text-decoration: underline; }
-        .left-menu ul { padding-left: 0; }
-        
-        /* Global Title Style */
-        .global-title-link { 
-            text-decoration: none; 
-            color: inherit; 
-            display: block;
-            border-bottom: 2px solid #3498DB; 
-            padding-bottom: 10px; 
-            margin-top: 0; 
-            margin-bottom: 20px;
-        }
-        .global-title-link h1 { 
-            color: #2C3E50; 
-            margin: 0; 
-            font-size: 2em;
-        }
-    </style>
-    
     </head>
     <body>
         
-    
-    <a href="index_content.html?v=20251115085703" class="global-title-link" target="mainFrame"> 
-        <h1>📊 PCE 앙상블 예측 대시보드</h1>
-    </a>
-    
-    <div class="content-wrapper">
-        
-    <div class="left-menu">
-        <h2 style="margin-top: 0;">📚 보고서 아카이브</h2>
-        
-        
-        <h3>누적 데이터베이스</h3>
-        <ul>
-            <li class="report-list-item"><a href="index_content.html?v=20251115085703" target="mainFrame">🏠 대시보드 요약</a></li> 
-            <li class="report-list-item"><a href="forecast_history.html?v=20251115085703" target="mainFrame">🗓️ PCE 예측 히스토리</a></li>
-            <li class="report-list-item"><a href="accuracy_history.html?v=20251115085703" target="mainFrame">🎯 예측 정확도 히스토리</a></li>
-            <li class="report-list-item"><a href="metrics_history.html?v=20251115085703" target="mainFrame">📈 모델 성능 지표</a></li>
-        </ul>
-    
-        
-        <h3>전체 보고서 기록 (최신순)</h3>
-        <ul><li class="report-list-item"><a href="report_20251115.html?v=20251115085703" target="mainFrame">📈 20251115 보고서</a></li></ul>
-    </div>
-    
-        <div class="main-content">
-            
     <h2>🎯 예측 정확도 히스토리</h2>
     <div class="section" style="background-color: #f7f9fc; border-color: #dce4f1;">
         <h3>📌 지표 개념 설명</h3>
@@ -148,9 +85,6 @@
     </tr>
   </tbody>
 </table>
-    </div>
-    
-        </div>
     </div>
     
     </body>
