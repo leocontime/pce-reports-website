@@ -15,7 +15,7 @@
             
             /* Table styles (Full width, dark header) */
             .summary-table, .pandas { width: 100%; }
-            .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+            .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; table-layout: fixed; }
             .summary-table th, .summary-table td, .pandas th, .pandas td { 
                 border: 1px solid #ddd; padding: 10px; text-align: center; 
             }
@@ -25,7 +25,9 @@
             }
             .summary-table tr:nth-child(even) { background-color: #f9f9f9; }
             
+            /* 💡 [FIX 1] 그래프/표 크기 반응형으로 조정 */
             img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+            .pandas table { width: 100% !important; }
             
             /* 🚀 Mobile Navigation Styles (New) */
             .mobile-nav-top, .mobile-nav-bottom {
@@ -57,10 +59,15 @@
                 font-weight: bold;
             }
 
-            /* 🚀 모바일 뷰 (800px 이하)에서만 Nav 보이기 */
+            /* 🚀 [FIX 2] 모바일 뷰 (800px 이하)에서만 Nav 보이기 */
             @media (max-width: 799px) {
                 .mobile-nav-top, .mobile-nav-bottom { 
                     display: block; 
+                }
+            }
+            @media (min-width: 800px) {
+                .mobile-nav-top, .mobile-nav-bottom { 
+                    display: none; 
                 }
             }
         </style>
@@ -69,10 +76,10 @@
     <body>
         
     <div class="mobile-nav-top">
-        <a href="index_content.html?v=20251115183931"  target="mainFrame">🏠 요약</a> | 
-        <a href="forecast_history.html?v=20251115183931"  target="mainFrame">🗓️ 예측 히스토리</a> | 
-        <a href="accuracy_history.html?v=20251115183931"  target="mainFrame">🎯 정확도 히스토리</a> | 
-        <a href="metrics_history.html?v=20251115183931"  target="mainFrame">📈 성능 지표</a>
+        <a href="index_content.html?v=20251115184721"  target="mainFrame">🏠 요약</a> | 
+        <a href="forecast_history.html?v=20251115184721"  target="mainFrame">🗓️ 예측 히스토리</a> | 
+        <a href="accuracy_history.html?v=20251115184721"  target="mainFrame">🎯 정확도 히스토리</a> | 
+        <a href="metrics_history.html?v=20251115184721"  target="mainFrame">📈 성능 지표</a>
     </div>
     
     <h2>모델 학습 성능 지표</h2>
@@ -88,7 +95,7 @@
     </div>
 
     <div class='pandas'>
-        <table border="1" class="dataframe summary-table">
+        <table border="1" class="dataframe summary-table pandas">
   <thead>
     <tr style="text-align: right;">
       <th>Model</th>
@@ -139,7 +146,7 @@
     <div class="mobile-nav-bottom">
         <h3>📚 전체 보고서 기록 (최신순)</h3>
         <ul>
-    <li class="report-list-item "><a href="report_20251115.html?v=20251115183931"  target="mainFrame">📈 20251115 보고서</a></li><li class="report-list-item"><a href="metrics_history.html?v=20251115183931"  target="mainFrame">⚠️ metrics_history.html (날짜 오류)</a></li></ul></div>
+    <li class="report-list-item "><a href="report_20251115.html?v=20251115184721"  target="mainFrame">📈 20251115 보고서</a></li></ul></div>
     </body>
     </html>
     

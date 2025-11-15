@@ -15,7 +15,7 @@
             
             /* Table styles (Full width, dark header) */
             .summary-table, .pandas { width: 100%; }
-            .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; }
+            .summary-table table, .pandas table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85em; table-layout: fixed; }
             .summary-table th, .summary-table td, .pandas th, .pandas td { 
                 border: 1px solid #ddd; padding: 10px; text-align: center; 
             }
@@ -25,7 +25,9 @@
             }
             .summary-table tr:nth-child(even) { background-color: #f9f9f9; }
             
+            /* 💡 [FIX 1] 그래프/표 크기 반응형으로 조정 */
             img { max-width: 100%; height: auto; display: block; margin: 15px auto; border: 1px solid #ccc; border-radius: 4px; }
+            .pandas table { width: 100% !important; }
             
             /* 🚀 Mobile Navigation Styles (New) */
             .mobile-nav-top, .mobile-nav-bottom {
@@ -57,10 +59,15 @@
                 font-weight: bold;
             }
 
-            /* 🚀 모바일 뷰 (800px 이하)에서만 Nav 보이기 */
+            /* 🚀 [FIX 2] 모바일 뷰 (800px 이하)에서만 Nav 보이기 */
             @media (max-width: 799px) {
                 .mobile-nav-top, .mobile-nav-bottom { 
                     display: block; 
+                }
+            }
+            @media (min-width: 800px) {
+                .mobile-nav-top, .mobile-nav-bottom { 
+                    display: none; 
                 }
             }
         </style>
@@ -69,18 +76,18 @@
     <body>
         
     <div class="mobile-nav-top">
-        <a href="index_content.html?v=20251115183931"  target="mainFrame">🏠 요약</a> | 
-        <a href="forecast_history.html?v=20251115183931"  target="mainFrame">🗓️ 예측 히스토리</a> | 
-        <a href="accuracy_history.html?v=20251115183931"  target="mainFrame">🎯 정확도 히스토리</a> | 
-        <a href="metrics_history.html?v=20251115183931"  target="mainFrame">📈 성능 지표</a>
+        <a href="index_content.html?v=20251115184721"  target="mainFrame">🏠 요약</a> | 
+        <a href="forecast_history.html?v=20251115184721"  target="mainFrame">🗓️ 예측 히스토리</a> | 
+        <a href="accuracy_history.html?v=20251115184721"  target="mainFrame">🎯 정확도 히스토리</a> | 
+        <a href="metrics_history.html?v=20251115184721"  target="mainFrame">📈 성능 지표</a>
     </div>
     
     <h2>🏠 PCE 앙상블 예측 요약 대시보드</h2>
-    <p>✅ **생성 시점:** 2025-11-15 10:39:31 PST</p>
+    <p>✅ **생성 시점:** 2025-11-15 10:47:21 PST</p>
     
     <div class="section">
         <h3>1. 앙상블 예측 최근 기록 (최신 5회)</h3>
-        <table border="1" class="dataframe summary-table">
+        <table border="1" class="dataframe summary-table pandas">
   <thead>
     <tr style="text-align: right;">
       <th>보고서 날짜</th>
@@ -89,7 +96,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><a href="report_20251115.html?v=20251115183931" target="mainFrame">20251115</a></td>
+      <td><a href="report_20251115.html?v=20251115184721" target="mainFrame">20251115</a></td>
       <td>2.1494</td>
     </tr>
   </tbody>
@@ -103,7 +110,7 @@
         
             <div style="border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
                 <h4 style="color: #34495E; margin-top: 0; font-size: 1.1em;">1) 최종 예상치: 2.1494% (20251115 보고서 기준)</h4>
-                <p>이 보고서 생성 시점의 12개월 전망 차트입니다. (상세 보고서 링크: <a href="report_20251115.html?v=20251115183931" target="mainFrame">20251115</a>)</p>
+                <p>이 보고서 생성 시점의 12개월 전망 차트입니다. (상세 보고서 링크: <a href="report_20251115.html?v=20251115184721" target="mainFrame">20251115</a>)</p>
                 <img src="index_comparison_chart_20251115.png" alt="PCE Forecast Chart for 2025-11-15">
             </div>
             
@@ -112,7 +119,7 @@
     <div class="mobile-nav-bottom">
         <h3>📚 전체 보고서 기록 (최신순)</h3>
         <ul>
-    <li class="report-list-item "><a href="report_20251115.html?v=20251115183931"  target="mainFrame">📈 20251115 보고서</a></li><li class="report-list-item"><a href="index_content.html?v=20251115183931"  target="mainFrame">⚠️ index_content.html (날짜 오류)</a></li></ul></div>
+    <li class="report-list-item "><a href="report_20251115.html?v=20251115184721"  target="mainFrame">📈 20251115 보고서</a></li></ul></div>
     </body>
     </html>
     
