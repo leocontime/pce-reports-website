@@ -1,4 +1,8 @@
 Model,MAE (Simulated),MAPE (Simulated),RMSE (Simulated),R-squared (Simulated),Report_Date
+AR(1),0.21,7.2,0.31,0.97,2026-01-05
+XGBoost,0.18,6.0,0.25,0.98,2026-01-05
+LSTM,0.15,5.0,0.22,0.985,2026-01-05
+Ensemble (Stacking),0.15,4.5,0.2,0.99,2026-01-05
 AR(1),0.21,7.2,0.31,0.97,2025-12-05
 XGBoost,0.18,6.0,0.25,0.98,2025-12-05
 LSTM,0.15,5.0,0.22,0.985,2025-12-05
